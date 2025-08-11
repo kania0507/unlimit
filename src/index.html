@@ -50,28 +50,31 @@
         <input type="text" placeholder="Szukaj...">
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>-->
-      <form id="search-form" class="search-wrapper" action="/search" method="GET">
-        <input
-          type="text"
-          id="search-input"
-          name="q"
-          placeholder="Szukaj..."
-          autocomplete="off"
-          aria-label="Wyszukaj produkty"
-        />
-        <button type="submit" class="search-button" aria-label="Szukaj">
-          🔍
-        </button>
+      <form id="search-form" action="/search" method="GET" class="navbar-form navbar-left" role="search" style="position: relative;">
+  <div class="input-group">
+    <input type="text" id="search-input" name="q" class="form-control" placeholder="Szukaj...">
+    <span class="input-group-btn">
+      <button type="submit" id="search-button" class="btn btn-default" aria-label="Szukaj">
+        <span class="glyphicon glyphicon-search"></span>
+      </button>
+    </span>
+  </div>
+</form>
 
-        <div id="search-modal" class="search-modal" role="listbox" aria-label="Ostatnie wyszukiwania">
-          <ul class="recent-searches">
-            <li>Produkt 1</li>
-            <li>Produkt 2</li>
-            <li>Produkt 3</li>
-            <li>Produkt 4</li>
-          </ul>
-        </div>
-      </form>
+<!-- Overlay wyszukiwarki -->
+<div id="search-overlay" class="search-overlay" style="display: none;">
+  <div class="container">
+    <h4>Ostatnio wyszukiwane:</h4>
+    <ul>
+      <li>Produkt 1</li>
+      <li>Produkt 2</li>
+      <li>Produkt 3</li>
+    </ul>
+  </div>
+</div>
+
+
+
 
 
       <!-- 4. IKONY -->
@@ -81,14 +84,14 @@
         <i class="fa fa-shopping-cart" title="Koszyk"></i>
       </div>
 
-      <div class="search-modal" id="search-modal">
+      <!--<div class="search-modal" id="search-modal">
       <ul>
         <li>Produkt A</li>
         <li>Produkt B</li>
         <li>Produkt C</li>
         <li>Produkt D</li>
       </ul>
-    </div>
+    </div>-->
 
     </div>
   </div>

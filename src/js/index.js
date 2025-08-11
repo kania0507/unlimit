@@ -78,6 +78,7 @@ prevArrow: `<button type="button" class="slick-prev">
     $('.cart-overlay').fadeOut();
   });
   // search
+  /*
   const $searchInput = $('#search-input');
   const $searchModal = $('#search-modal');
 
@@ -94,7 +95,37 @@ prevArrow: `<button type="button" class="slick-prev">
     ) {
       $searchModal.removeClass('active');
     }
+  }); */
+  
+  // Kliknięcie w input - otwórz modal (tablet+)
+jQuery(function($) {
+  const $searchInput = $('#search-input');
+  const $searchOverlay = $('#search-overlay');
+
+  $searchInput.on('click', function () {
+    $searchOverlay.show();
   });
+
+  $(document).on('click', function (e) {
+    if (
+      !$(e.target).closest('#search-input').length &&
+      !$(e.target).closest('#search-overlay').length
+    ) {
+      $searchOverlay.hide();
+    }
+  });
+
+  $('#search-form').on('submit', function (e) {
+    e.preventDefault();
+    const query = $searchInput.val().trim();
+    if (query) {
+      // Podmień logikę wyszukiwania według potrzeb:
+      window.location.href = `/search?q=${encodeURIComponent(query)}`;
+    }
+    $searchOverlay.hide();
+  });
+});
+
 
   // submenu
   $('.has-submenu > a').on('click', function(e) {
