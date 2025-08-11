@@ -1,0 +1,133 @@
+.navbar {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+
+  .navbar__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 15px;
+    }
+  }
+
+  .navbar__logo img {
+    height: 40px;
+  }
+
+
+  
+  .navbar-nav {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li a {
+      text-decoration: none;
+      color: #333;
+
+      &:hover {
+        color: #007bff;
+      }
+    }
+
+    @media (max-width: 767px) {
+      justify-content: center;
+    }
+  }
+
+  .navbar__search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 250px;
+    flex: 1;
+
+    input {
+      width: 100%;
+      padding: 6px 32px 6px 12px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+    }
+
+    button {
+      position: absolute;
+      right: 8px;
+      background: none;
+      border: none;
+      color: #666;
+      cursor: pointer;
+
+      i {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      max-width: 100%;
+    }
+  }
+
+  .navbar__icons {
+    display: flex;
+    gap: 15px;
+    font-size: 18px;
+    cursor: pointer;
+
+    i {
+      color: #333;
+
+      &:hover {
+        color: #007bff;
+      }
+    }
+
+    @media (max-width: 767px) {
+      justify-content: center;
+    }
+  }
+  .has-submenu ul {
+    display: none;
+  }
+  .has-submenu.open ul {
+    display: block;
+  }
+
+
+  .navbar-nav > li {
+    position: relative;
+  }
+
+  /* Submenu - ukryte domyślnie */
+  .navbar-nav .submenu {
+    display: none;
+    position: absolute;
+    top: 100%; /* zaraz pod rodzicem */
+    left: 0;
+    background: #fff;
+    z-index: 1000; /* wysoki z-index, na wierzchu */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-width: 180px;
+  }
+
+  /* Submenu aktywne (po kliknięciu lub hover) */
+  .navbar-nav .submenu.active {
+    display: block;
+  }
+
+  /* Stylowanie elementów submenu */
+  .navbar-nav .submenu li {
+    padding: 10px 20px;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+
+}

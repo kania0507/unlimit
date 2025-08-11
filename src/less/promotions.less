@@ -1,0 +1,31 @@
+@import 'product.less';
+
+.promotions {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+
+  .container {
+    position: relative;
+  }
+
+  .promotions__slider {
+    .slick-slide {
+      margin: 0 10px;
+    }
+
+    .slick-prev,
+    .slick-next {
+      background: #fff;
+      border: 1px solid #ccc;
+      width: 40px;
+      height: 40px;
+      z-index: 10;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: #333;
+      font-size: 20px;
+    }
+  }
+}

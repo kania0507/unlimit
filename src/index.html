@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Projekt - Layout z Figmy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Slick Slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <!-- Ikony -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- GÓRNY PASEK -->
+  <div class="header-top">
+    <div class="container">
+      <div class="header-top__phone">Zadzwoń: +48 123 456 789</div>
+    </div>
+  </div>
+
+  <!-- NAWIGACJA -->
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar__row">
+
+      <!-- 1. LOGO -->
+      <div class="navbar__logo">
+        <img src="https://via.placeholder.com/120x40?text=LOGO" alt="Logo">
+      </div>
+
+      <!-- 2. MENU -->
+      <ul class="nav navbar-nav">
+        <li><a href="#">Strona główna</a></li>
+        <li class="has-submenu">
+          <a href="#">Produkty ▾</a>
+          <ul>
+            <li><a href="#">Produkt 1</a></li>
+            <li><a href="#">Produkt 2</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Sklep</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+
+      <!-- 3. WYSZUKIWARKA -->
+      <!--<form class="navbar__search">
+        <input type="text" placeholder="Szukaj...">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>-->
+      <form id="search-form" class="search-wrapper" action="/search" method="GET">
+        <input
+          type="text"
+          id="search-input"
+          name="q"
+          placeholder="Szukaj..."
+          autocomplete="off"
+          aria-label="Wyszukaj produkty"
+        />
+        <button type="submit" class="search-button" aria-label="Szukaj">
+          🔍
+        </button>
+
+        <div id="search-modal" class="search-modal" role="listbox" aria-label="Ostatnie wyszukiwania">
+          <ul class="recent-searches">
+            <li>Produkt 1</li>
+            <li>Produkt 2</li>
+            <li>Produkt 3</li>
+            <li>Produkt 4</li>
+          </ul>
+        </div>
+      </form>
+
+
+      <!-- 4. IKONY -->
+      <div class="navbar__icons">
+        <i class="fa fa-user" title="Konto"></i>
+        <i class="fa fa-heart" title="Ulubione"></i>
+        <i class="fa fa-shopping-cart" title="Koszyk"></i>
+      </div>
+
+      <div class="search-modal" id="search-modal">
+      <ul>
+        <li>Produkt A</li>
+        <li>Produkt B</li>
+        <li>Produkt C</li>
+        <li>Produkt D</li>
+      </ul>
+    </div>
+
+    </div>
+  </div>
+</nav>
+
+  <!-- SLIDER -->
+  <section class="slider">
+    <div class="slider__container">
+      <div class="slider__item">
+        <img src="https://picsum.photos/id/1015/1200/500" loading="lazy" />
+        <div class="slider__text">
+          <h2>Oferta specjalna</h2>
+          <a href="#">Zobacz więcej</a>
+        </div>
+      </div>
+      <div class="slider__item">
+        <img src="https://picsum.photos/id/1016/1200/500" loading="lazy" />
+        <div class="slider__text">
+          <h2>Nowości</h2>
+          <a href="#">Sprawdź</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- GALERIA -->
+<section class="gallery">
+  <div class="container">
+    <div class="gallery__grid">
+      <div class="div1"><img src="https://picsum.photos/id/1015/800/1000" alt="Galeria1" loading="lazy" /></div>
+      <div class="div2"><img src="https://picsum.photos/id/1016/800/400" alt="Galeria2" loading="lazy" /></div>
+      <div class="div3"><img src="https://picsum.photos/id/1016/800/400" alt="Galeria3" loading="lazy" /></div>
+      <div class="div4"><img src="https://picsum.photos/id/1015/800/1000" alt="Galeria4" loading="lazy" /></div>
+      <div class="div5"><img src="https://picsum.photos/id/1015/800/1000" alt="Galeria5" loading="lazy" /></div>
+      <div class="div6"><img src="https://picsum.photos/id/1016/800/400" alt="Galeria6" loading="lazy" /></div>
+      <div class="div7"><img src="https://picsum.photos/id/1016/800/400" alt="Galeria7" loading="lazy" /></div>
+      <div class="div8"><img src="https://picsum.photos/id/1015/800/1000" alt="Galeria8" loading="lazy" /></div>
+    </div>
+  </div>
+    
+</section>
+
+  <!-- PROMOCJE -->
+  <section class="promotions">
+    <div class="container">
+      <div class="promotions__slider">
+        <div class="promotion__item">
+          <img src="https://picsum.photos/id/101/300/300" loading="lazy" />
+          <h3>Produkt 1</h3>
+          <div class="price">99,99 zł</div>
+        </div>
+        <div class="promotion__item">
+          <img src="https://picsum.photos/id/102/300/300" loading="lazy" />
+          <h3>Produkt 2</h3>
+          <div class="price">129,99 zł</div>
+        </div>
+        <div class="promotion__item">
+          <div class="badge">Bestseller</div>
+          <img src="https://picsum.photos/id/110/300/300" loading="lazy" />
+          <h3>Produkt 4</h3>
+          <div class="price">59,99 zł</div>
+        </div>
+        <div class="promotion__item">
+          <div class="badge">-30%</div>
+          <img src="https://picsum.photos/id/103/300/300" loading="lazy" />
+          <h3>Produkt 3</h3>
+          <div class="price">89,99 zł</div>
+        </div>
+
+        <div class="promotion__item">
+          <img src="https://picsum.photos/id/103/300/300" loading="lazy" />
+          <h3>Produkt 3</h3>
+          <div class="price">89,99 zł</div>
+        </div>
+        <div class="promotion__item">
+          <img src="https://picsum.photos/id/103/300/300" loading="lazy" />
+          <h3>Produkt 3</h3>
+          <div class="price">89,99 zł</div>
+        </div>
+        <div class="promotion__item">
+          <div class="badge">-30%</div>
+          <img src="https://picsum.photos/id/103/300/300" loading="lazy" />
+          <h3>Produkt 3</h3>
+          <div class="price">89,99 zł</div>
+        </div>
+        <div class="promotion__item">
+          <div class="badge">-30%</div>
+          <img src="https://picsum.photos/id/103/300/300" loading="lazy" />
+          <h3>Produkt 3</h3>
+          <div class="price">89,99 zł</div>
+        </div>
+
+        <!-- więcej produktów -->
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="container newsletter__container">
+      <div class="newsletter__text">
+        <h2>Zapisz się do newslettera</h2>
+        <p>Otrzymuj najnowsze informacje i promocje.</p>
+      </div>
+      <div class="newsletter__form">
+        <form>
+          <input type="email" placeholder="Twój e-mail">
+          <input type="submit" value="Wyślij">
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- STOPKA -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__columns">
+        <div class="footer__col">
+          <h4>O nas</h4>
+          <ul>
+            <li>Kim jesteśmy</li>
+            <li>Kariera</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Informacje</h4>
+          <ul>
+            <li>Regulamin</li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+
+
+<!-- PANEL KOSZYKA -->
+<div class="cart-overlay"></div>
+<div class="cart-sidebar">
+  <div class="cart-header">
+    <h3>Twój koszyk</h3>
+    <button class="close-cart">&times;</button>
+  </div>
+  <div class="cart-body">
+    <div class="cart-item">
+      <img src="https://picsum.photos/seed/p1/60/60" alt="Produkt 1">
+      <div class="cart-info">
+        <p>Produkt 1</p>
+        <span>1 × 99,00 zł</span>
+      </div>
+    </div>
+    <div class="cart-item">
+      <img src="https://picsum.photos/seed/p2/60/60" alt="Produkt 2">
+      <div class="cart-info">
+        <p>Produkt 2</p>
+        <span>2 × 49,00 zł</span>
+      </div>
+    </div>
+    <div class="cart-summary">
+      <strong>Suma: 197,00 zł</strong>
+      <button class="btn btn-primary btn-block">Do kasy</button>
+    </div>
+  </div>
+</div>
+
+
+</body>

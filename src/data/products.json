@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Produkt 1",
+    "price": "49,99 zł",
+    "img": "https://picsum.photos/id/101/100/100"
+  },
+  {
+    "id": 2,
+    "name": "Produkt 2",
+    "price": "79,99 zł",
+    "img": "https://picsum.photos/id/102/100/100"
+  }
+]
