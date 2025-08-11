@@ -22,13 +22,13 @@ prevArrow: `<button type="button" class="slick-prev">
   });
 /* promo slider */
 $('.promotions__slider').slick({
-  slidesToShow: 4,
+  slidesToShow: 4, // domyślnie 4 slajdy na desktop
   slidesToScroll: 1,
-  dots: true,
+  infinite: false,
   arrows: true,
-  infinite: true,
-  lazyLoad: 'ondemand',
-prevArrow: `<button type="button" class="slick-prev">
+  dots: true,
+    lazyLoad: 'ondemand',
+  prevArrow: `<button type="button" class="slick-prev">
     <svg viewBox="0 0 20 20">
       <path d="M13.41 15.41L8.83 10.83L13.41 6.25L12 4.83L6 10.83L12 16.83L13.41 15.41Z" />
     </svg>
@@ -40,25 +40,22 @@ prevArrow: `<button type="button" class="slick-prev">
   </button>`,
   responsive: [
     {
-      breakpoint: 992,
+      breakpoint: 1024, // tablet
       settings: {
         slidesToShow: 3
       }
     },
     {
-      breakpoint: 768,
+      breakpoint: 768, // mobile
       settings: {
-        slidesToShow: 2
-      }
-    },
-    {
-      breakpoint: 576,
-      settings: {
-        slidesToShow: 1
+        slidesToShow: 1.5, // 1,5 slajdu na mobile
+        slidesToScroll: 1
       }
     }
   ]
 });
+
+
 
 /* koszyk modal */
   $('.fa-shopping-cart').on('click', function () {
