@@ -130,6 +130,37 @@ jQuery(function($) {
     const $parentLi = $(this).parent();
     $parentLi.toggleClass('open');
   });
+
+  // footer
+  
+  function initFooterAccordion() {
+    if ($(window).width() <= 767) {
+      $('.footer__toggle').off('click').on('click', function() {
+        const $list = $(this).next('.footer__list');
+
+        // zamknij inne, jeśli chcesz tylko jedno otwarte
+        $('.footer__list').not($list).removeClass('open');
+        $('.footer__toggle').not(this).removeClass('open');
+
+        $list.toggleClass('open');
+        $(this).toggleClass('open');
+      });
+    } else {
+      // na większych ekranach zawsze wszystko otwarte
+      $('.footer__list').removeClass('open');
+      $('.footer__toggle').removeClass('open').off('click');
+    }
+  }
+
+  initFooterAccordion();
+
+  $(window).on('resize', function() {
+    initFooterAccordion();
+  });
+
+
+
 });
+
 
 

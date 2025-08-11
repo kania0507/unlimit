@@ -38,4 +38,34 @@
       font-size: 18px;
     }
   }
+  @media (max-width: 767px) {
+    .footer__columns {
+      flex-direction: column;
+    }
+    .footer__list {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .footer__list.open {
+      max-height: 500px; // wystarczająca wartość do rozciągnięcia
+    }
+
+    .footer__toggle {
+      cursor: pointer;
+      position: relative;
+      padding-right: 20px;
+    }
+    .footer__toggle::after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .footer__toggle.open::after {
+      content: '-';
+    }
+  }
+
+
 }

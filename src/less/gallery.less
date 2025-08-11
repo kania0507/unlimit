@@ -60,4 +60,30 @@
     grid-column-start: 4;
     grid-row-start: 2;
 }
+
+ // Mobile layout
+  @media (max-width: 767px) {
+    .gallery__grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      gap: 8px;
+
+      // Reset custom grid positions
+      .div1,
+      .div2,
+      .div3,
+      .div4,
+      .div5,
+      .div6,
+      .div7,
+      .div8 {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      div {
+        aspect-ratio: 1/1; // zachowaj proporcje kwadratowe
+      }
+    }
+  }
 }
