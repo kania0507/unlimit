@@ -41,7 +41,10 @@
     }
 
     @media (max-width: 767px) {
-      justify-content: center;
+      // padding: 40px;
+      justify-content: start;
+      align-items: start;
+      gap: 0;
       &.open {
         // display: flex;
       }
@@ -174,9 +177,6 @@
   }
 }
 
-
-
-  //
   .search-modal {
     position: absolute;
     top: 100%; /* pod inputem */
@@ -189,18 +189,24 @@
     z-index: 1050;
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   }
-
 }
+
 .search-overlay {
   position: absolute;
   top: 100%; /* lub top: 50px; jeśli navbar ma taką wysokość */
   left: 0;
-  width: 100vw;
+  width: 100%;
   background: white;
   border-top: 1px solid #ccc;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   z-index: 9999;
   padding: 20px 0;
+
+  display: none;
+
+  .active {
+    display: block !important;
+  }
 }
 
 .search-overlay ul {
@@ -219,7 +225,7 @@
 }
 @media (max-width: 767px) {
   .search-overlay {
-    display: none !important;
+    // display: none !important;
   }
 }
 
@@ -257,7 +263,6 @@
     background: #fff;
     z-index: 9998;
     padding: 80px 20px 20px;
-    gap: 20px;
     overflow-y: auto;
     transition: all 0.3s ease;
   }
@@ -313,7 +318,7 @@
     background: white;
     padding: 80px 20px 20px;
     z-index: 10000;
-    gap: 20px;
+    gap: 0;
     transition: all 0.3s ease;
     overflow-y: auto;
   }
@@ -327,19 +332,8 @@
   }
 }
 
+}
 
-}
-/*
-.navbar__toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.navbar__toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-.navbar__toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-*/
 
 .navbar__toggle {
   display: none;
@@ -360,10 +354,7 @@
   }
 }
 
-
-
 }
-
 
 .mobile-menu {
   @media (max-width: 767px) {
@@ -380,11 +371,27 @@
     display: none !important;
     z-index: 10000;
 
+    &-row {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+    }
+    ul {
+      width: 100%;
+      list-style: none;
+    }
     li {
       margin: 20px 0;
     }
     &.open {
       display: flex !important;
+    }
+    &-head {
+      font-weight: bold;
+      width: calc(100% - 40px);
+    }
+    &-close {
+      width: 40px;
     }
   }
 }

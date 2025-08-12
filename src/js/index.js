@@ -95,13 +95,20 @@ $('.promotions__slider').slick({
     }
   }); */
   
-  // Kliknięcie w input - otwórz modal (tablet+)
+  // Kliknięcie w input - otwórz modal 
 jQuery(function($) {
   const $searchInput = $('#search-input');
+  const $searchInputMobile = $('#search-input-mobile');
   const $searchOverlay = $('#search-overlay');
+  const $searchOverlayMobile = $('#search-overlay-mobile');
 
   $searchInput.on('click', function () {
     $searchOverlay.show();
+    $searchOverlay.toggleClass('active');
+  });
+  $searchInputMobile.on('click', function () {
+    $searchOverlayMobile.show();
+    $searchOverlayMobile.toggleClass('active');
   });
 
   $(document).on('click', function (e) {
@@ -110,6 +117,12 @@ jQuery(function($) {
       !$(e.target).closest('#search-overlay').length
     ) {
       $searchOverlay.hide();
+    }
+    if (
+      !$(e.target).closest('#search-input-mobile').length &&
+      !$(e.target).closest('#search-overlay-mobile').length
+    ) {
+      $searchOverlayMobile.hide();
     }
   });
 
