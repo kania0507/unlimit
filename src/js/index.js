@@ -1,8 +1,8 @@
 import $ from 'jquery';
 import 'slick-carousel';
+// import 'slick-carousel/slick/slick.min.js';
 import '../less/main.less';
 import { loadCartItems } from './cart.js';
-// import 'slick-carousel/slick/slick.min.js';
 
 $(document).ready(function () {
   /* gorny slider */
