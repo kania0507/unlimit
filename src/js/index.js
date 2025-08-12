@@ -20,6 +20,7 @@ prevArrow: `<button type="button" class="slick-prev">
     </svg>
   </button>`
   });
+
 /* promo slider */
 $('.promotions__slider').slick({
   slidesToShow: 4, // domyślnie 4 slajdy na desktop
@@ -125,14 +126,46 @@ jQuery(function($) {
 
 
   // submenu
-  $('.has-submenu > a').on('click', function(e) {
+$('.submenu-toggle').on('click', function (e) {
+  e.preventDefault();
+
+  // zamknij inne otwarte megamenu
+  $('.has-submenu').not($(this).parent()).removeClass('open');
+
+  // toggle aktualnego
+  $(this).parent().toggleClass('open');
+});
+
+$(function () {
+  $('.has-submenu > a').on('click', function (e) {
     e.preventDefault();
-    const $parentLi = $(this).parent();
-    $parentLi.toggleClass('open');
+
+    const $submenu = $(this).siblings('.megamenu-overlay');
+
+    // Ukryj inne otwarte megamenu
+    $('.megamenu-overlay').not($submenu).slideUp(200);
+
+    // Przełącz aktualne megamenu
+    $submenu.stop(true, true).slideToggle(250);
+  });
+
+  // Opcjonalnie: klik poza menu zamyka megamenu
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('.has-submenu').length) {
+      $('.megamenu-overlay').slideUp(200);
+    }
+  });
+});
+
+
+  $('.navbar__toggle').on('click', function () {
+    $('.navbar-nav').toggleClass('open');
+  });
+   $('.mobile-menu').on('click', function () {
+    $('.navbar-nav').toggleClass('open');
   });
 
   // footer
-  
   function initFooterAccordion() {
     if ($(window).width() <= 767) {
       $('.footer__toggle').off('click').on('click', function() {

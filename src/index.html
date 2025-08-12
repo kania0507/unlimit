@@ -21,81 +21,114 @@
     </div>
   </div>
 
-  <!-- NAWIGACJA -->
+
+  <!-- navigacja -->
+
+<!-- NAWIGACJA -->
 <nav class="navbar">
   <div class="container">
-    <div class="navbar__row">
 
-      <!-- 1. LOGO -->
+    <!-- MOBILE -->
+    <div class="navbar__mobile visible-xs">
+      <div class="row">
+        <div class="col-xs-4">
+          <div class="navbar__logo">
+            <img src="https://via.placeholder.com/100x30?text=LOGO" alt="Logo" class="img-responsive">
+          </div>
+        </div>
+        <div class="col-xs-4 text-center">
+          <div class="navbar__icons">
+            <i class="fa fa-user" title="Konto"></i>
+            <i class="fa fa-heart" title="Ulubione"></i>
+            <i class="fa fa-shopping-cart" title="Koszyk"></i>
+          </div>
+        </div>
+        <div class="col-xs-4 text-right">
+          <div class="navbar__toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESKTOP MENU -->
+    <div class="navbar__row hidden-xs">
       <div class="navbar__logo">
         <img src="https://via.placeholder.com/120x40?text=LOGO" alt="Logo">
       </div>
 
-      <!-- 2. MENU -->
+      
       <ul class="nav navbar-nav">
         <li><a href="#">Strona główna</a></li>
         <li class="has-submenu">
-          <a href="#">Produkty ▾</a>
-          <ul>
-            <li><a href="#">Produkt 1</a></li>
-            <li><a href="#">Produkt 2</a></li>
-          </ul>
+          <a href="#" class="submenu-toggle">Produkty ▾</a>
+          <div class="megamenu-overlay">
+            <div class="megamenu-content container">
+              <ul>
+                <li><a href="#">Produkt 1</a></li>
+                <li><a href="#">Produkt 2</a></li>
+                <li><a href="#">Produkt 3</a></li>
+              </ul>
+            </div>
+          </div>
         </li>
         <li><a href="#">Sklep</a></li>
         <li><a href="#">Kontakt</a></li>
       </ul>
 
-      <!-- 3. WYSZUKIWARKA -->
-      <!--<form class="navbar__search">
-        <input type="text" placeholder="Szukaj...">
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </form>-->
-      <form id="search-form" action="/search" method="GET" class="navbar-form navbar-left" role="search" style="position: relative;">
-  <div class="input-group">
-    <input type="text" id="search-input" name="q" class="form-control" placeholder="Szukaj...">
-    <span class="input-group-btn">
-      <button type="submit" id="search-button" class="btn btn-default" aria-label="Szukaj">
-        <span class="glyphicon glyphicon-search"></span>
-      </button>
-    </span>
-  </div>
-</form>
+      <!-- Wyszukiwarka -->
+      <form id="search-form" action="/search" method="GET" class="navbar-form navbar-left">
+        <div class="input-group">
+          <input type="text" id="search-input" name="q" class="form-control" placeholder="Szukaj...">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-default">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+        </div>
+      </form>
 
-<!-- Overlay wyszukiwarki -->
-<div id="search-overlay" class="search-overlay" style="display: none;">
-  <div class="container">
-    <h4>Ostatnio wyszukiwane:</h4>
-    <ul>
-      <li>Produkt 1</li>
-      <li>Produkt 2</li>
-      <li>Produkt 3</li>
-    </ul>
-  </div>
-</div>
+       <!-- Overlay wyszukiwarki -->
+      <div id="search-overlay" class="search-overlay" style="display: none;">
+        <div class="container">
+          <h4>Ostatnio wyszukiwane:</h4>
+          <ul>
+            <li>Produkt 1</li>
+            <li>Produkt 2</li>
+            <li>Produkt 3</li>
+          </ul>
+        </div>
+      </div>
 
-
-
-
-
-      <!-- 4. IKONY -->
+      <!-- Ikony -->
       <div class="navbar__icons">
         <i class="fa fa-user" title="Konto"></i>
         <i class="fa fa-heart" title="Ulubione"></i>
         <i class="fa fa-shopping-cart" title="Koszyk"></i>
       </div>
-
-      <!--<div class="search-modal" id="search-modal">
-      <ul>
-        <li>Produkt A</li>
-        <li>Produkt B</li>
-        <li>Produkt C</li>
-        <li>Produkt D</li>
-      </ul>
-    </div>-->
-
     </div>
+
+    <!--  MOBILE MENU -->
+    <ul class="nav navbar-nav mobile-menu visible-xs">
+      <li><a href="#">Strona główna</a></li>
+      <li class="has-submenu">
+        <a href="#">Produkty</a>
+        <ul>
+          <li><a href="#">Produkt 1</a></li>
+          <li><a href="#">Produkt 2</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Sklep</a></li>
+      <li><a href="#">Kontakt</a></li>
+    </ul>
+
   </div>
 </nav>
+
+
+
 
   <!-- SLIDER -->
   <section class="slider">
