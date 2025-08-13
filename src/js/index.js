@@ -22,6 +22,8 @@ $('.promotions__slider').slick({
   arrows: true,
   dots: true,
   lazyLoad: 'ondemand',
+  centerMode: false,
+  variableWidth: false,
   responsive: [
     {
       breakpoint: 1024, // tablet
@@ -33,11 +35,13 @@ $('.promotions__slider').slick({
       breakpoint: 768, // mobile
       settings: {
         slidesToShow: 1.5, // 1,5 slajdu na mobile
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        centerMode: false
       }
     }
   ]
 });
+
 }
 
 

@@ -52,14 +52,17 @@ export default {
         }
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
         type: 'asset/resource',
+        generator: {
+           filename: 'images/[name][hash][ext][query]'
+        }
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html', // ← TO JEST KLUCZOWE!
+      template: './src/index.html',
       filename: 'index.html'
     }),
     new MiniCssExtractPlugin({

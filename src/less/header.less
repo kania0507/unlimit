@@ -1,10 +1,22 @@
 .header-top {
-  background-color: #007bff;
+  background: @bg-blue;
+  padding: 0.5625rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: no-wrap;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
   color: white;
-  padding: 5px 0;
-
-  .header-top__phone {
-    text-align: center;
-    font-size: 14px;
+  @media (max-width: 767px) {
+    padding: 0.625rem 0;
+  }
+  &__elem {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    img {
+      min-height: 1.25rem;
+    }
   }
 }

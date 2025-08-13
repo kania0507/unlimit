@@ -1,16 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
+@import "variables.less";
+@import "animations.less";
 @import "header.less";
 @import "nav.less";
 @import "slider.less";
 @import "gallery.less";
-@import 'promotions.less';
-@import 'slick.less';
-@import 'cart.less';
+@import "promotions.less";
+@import "slick.less";
+@import "cart.less";
 @import "footer.less";
 
-body.no-scroll {
-  overflow: hidden;
+html, body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  .no-scroll {
+    overflow: hidden;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 3.875rem;
+    font-weight: 700;
+    // 40/62
+  }
+  h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 600;
+    // 32/auto
+  }
+  h3 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 500;
+    // 24/auto
+  }
+  h4 {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    font-weight: 400;
+    // 20/auto
+  }
+  .regular {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+  }
+  .bolder500 {
+    font-weight: 500;
+  }
+  .bolder600 {
+    font-weight: 600;
+  }
+  .bold {
+    font-weight: 700;
+  }
+  a {
+      color: @f-black;
+  }
 }

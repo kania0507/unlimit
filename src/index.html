@@ -5,31 +5,56 @@
   <title>Projekt - Layout z Figmy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Twoja Firma",
+  "url": "https://twojafirma.pl",
+  "logo": "https://twojafirma.pl/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/twojafirma",
+    "https://www.instagram.com/twojafirma"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+48-123-456-789",
+    "contactType": "Customer Service",
+    "areaServed": "PL",
+    "availableLanguage": ["Polish", "English"]
+  }
+}
+</script>
+
 </head>
 <body>
 
   <!-- GÓRNY PASEK -->
-  <div class="header-top">
-    <div class="container">
-      <div class="header-top__phone">Zadzwoń: +48 123 456 789</div>
-    </div>
+  <div class="header-top bolder600">
+      <span class="header-top__elem"><img src="<%= require('./images/Vector.svg') %>" alt="telefon" class="img-responsive"> +48 123 456 789</span>
+      <span class="breaker hidden-xs">|</span>
+      <span class="header-top__elem hidden-xs"><img src="<%= require('./images/edit (9).svg') %>" alt="napisz" class="img-responsive"> Napisz do nas</span>
+      <span class="breaker hidden-xs">|</span>
+      <span class="header-top__elem hidden-xs"><img src="<%= require('./images/shipping-fast (4).svg') %>" alt="darmowa dostawa" class="img-responsive"> Darmowa dostawa</span>
+      <span class="breaker hidden-xs">|</span>
+      <span class="header-top__elem hidden-xs"><img src="<%= require('./images/restock (3).svg') %>" alt="telefon" class="img-responsive"> 30 DNI NA DARMOWY ZWROT</span>
   </div>
 
 <!-- NAWIGACJA -->
 <nav class="navbar">
-  <div class="container">
+  <div class="container regular">
 
     <!-- MOBILE -->
     <div class="navbar__mobile visible-xs">
       <div class="row">
         <div class="col-xs-4">
           <div class="navbar__logo">
-            <img src="https://via.placeholder.com/100x30?text=LOGO" alt="Logo" class="img-responsive">
+            <img src="<%= require('./images/Logo.svg') %>" alt="Logo" class="img-responsive">
           </div>
         </div>
         <div class="col-xs-4 text-center">
           <div class="navbar__icons">
-            <i class="fa fa-user" title="Konto"></i>
+            <img src="<%= require('./images/User_light.svg') %>" alt="Konto" class="img-responsive">
             <i class="fa fa-heart" title="Ulubione"></i>
             <i class="fa fa-shopping-cart" title="Koszyk"></i>
           </div>
@@ -57,15 +82,15 @@
 
     <!-- DESKTOP MENU -->
     <div class="navbar__row hidden-xs">
-      <div class="navbar__logo">
-        <img src="https://via.placeholder.com/120x40?text=LOGO" alt="Logo">
+      <div class="navbar__logo col-sm-2">
+        <img src="<%= require('./images/Logo.svg') %>" alt="Logo" class="img-responsive">
       </div>
 
       
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav col-sm-5">
         <li><a href="#">Strona główna</a></li>
         <li class="has-submenu">
-          <a href="#" class="submenu-toggle">Produkty ▾</a>
+          <a href="#" class="submenu-toggle">Produkty</a>
           <div class="megamenu-overlay">
             <div class="megamenu-content container">
               <ul>
@@ -81,15 +106,11 @@
       </ul>
 
       <!-- Wyszukiwarka -->
-      <form id="search-form" action="/search" method="GET" class="navbar-form navbar-left">
-        <div class="input-group">
-          <input type="text" id="search-input" name="q" class="form-control" placeholder="Szukaj...">
-          <span class="input-group-btn">
-            <button type="submit" class="btn btn-default">
-              <span class="glyphicon glyphicon-search"></span>
-            </button>
-          </span>
-        </div>
+       <form id="search-form" action="/search" method="GET" class="navbar-searchform navbar-left">
+        <input type="text" id="search-input" name="q" class="form-control regular" placeholder="Wyszukaj">
+        <button type="submit" class="search-icon-btn" aria-label="Wyszukaj">
+           <img src="<%= require('./images/Search_light.svg') %>" alt="Logo" class="img-responsive">
+        </button>
       </form>
 
        <!-- Overlay wyszukiwarki -->
@@ -105,15 +126,15 @@
       </div>
 
       <!-- Ikony -->
-      <div class="navbar__icons">
-        <i class="fa fa-user" title="Konto"></i>
-        <i class="fa fa-heart" title="Ulubione"></i>
-        <i class="fa fa-shopping-cart" title="Koszyk"></i>
+      <div class="navbar__icons col-sm-2">
+        <div class="navbar__icons__div"><img src="<%= require('./images/User_light.svg') %>" alt="Konto" class="img-responsive"></div>
+        <div class="navbar__icons__div"><img src="<%= require('./images/Favorite_light.svg') %>" alt="Ulubione" class="img-responsive"></div>
+        <div class="navbar__icons__div"><img src="<%= require('./images/Bag_alt_light.svg') %>" alt="Koszyk" class="img-responsive"></div>
       </div>
     </div>
 
     <!--  MOBILE MENU -->
-    <div class="nav navbar-nav mobile-menu visible-xs">
+    <div class="nav navbar-nav mobile-menu visible-xs slide-in-left">
       <div class="mobile-menu-row">
         <div class="mobile-menu-head">Menu</div>
         <div class="mobile-menu-close">x</div>
@@ -135,11 +156,11 @@
 
     <!-- SEARCH FORM (mobile) -->
     <div class="navbar__search-wrapper visible-xs">
-      <form id="search-form" action="/search" method="GET" role="search">
+      <form id="search-form" action="/search" method="GET" role="search" class="navbar-searchform">
         <div class="input-group">
-          <input type="text" id="search-input-mobile" name="q" class="form-control" placeholder="Szukaj...">
+          <input type="text" id="search-input-mobile" name="q" class="form-control" placeholder="Wyszukaj">
           <span class="input-group-btn">
-            <button type="submit" id="search-button" class="btn btn-default" aria-label="Szukaj">
+            <button type="submit" id="search-button" class="btn btn-default" aria-label="Wyszukaj">
               <span class="glyphicon glyphicon-search"></span>
             </button>
           </span>
@@ -151,13 +172,11 @@
 </nav>
 
 
-
-
   <!-- SLIDER -->
   <section class="slider container">
     <div class="slider__container">
       <div class="slider__item">
-        <img src="https://picsum.photos/id/1015/1200/500" loading="lazy" />
+        <img src="<%= require('./images/222 1.png') %>" loading="lazy" />
         <div class="slider__text">
           <h2>Oferta specjalna</h2>
           <a href="#">Zobacz więcej</a>
@@ -173,7 +192,6 @@
     </div>
   </section>
 
-
   <!-- GALERIA -->
 <section class="gallery">
   <div class="container">
@@ -188,7 +206,6 @@
       <div class="div8"><img src="https://picsum.photos/id/1015/800/1000" alt="Galeria8" loading="lazy" /></div>
     </div>
   </div>
-    
 </section>
 
   <!-- PROMOCJE -->
@@ -282,9 +299,6 @@
   </div>
 </footer>
 
-
-
-
 <!-- PANEL KOSZYKA -->
 <div class="cart-overlay"></div>
 <div class="cart-sidebar">
@@ -313,6 +327,5 @@
     </div>
   </div>
 </div>
-
 
 </body>
