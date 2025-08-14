@@ -1,65 +1,141 @@
 .slider {
   position: relative;
-
-
-  //
+  
   .image-wrapper {
-  width: 100%;
-  aspect-ratio: 16 / 9; /* lub 1/1, 4/3, itp. */
-  overflow: hidden;
-}
+    width: 100%;
+    aspect-ratio: 16 / 9; /* lub 1/1, 4/3, itp. */
+    overflow: hidden;
+  }
 
-.image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* lub contain – zależy od efektu */
-}
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* lub contain – zależy od efektu */
+  }
 
-  //
+
   .slider__item {
     width: 100%;
-    @media (max-width: 767px) {
-      aspect-ratio: 16 / 9; /* lub 1/1, 4/3, itp. */
-      overflow: hidden;
-    }
-    img {
-      width: 100%;
-      // height: auto;
-      display: block;
-      @media (max-width: 767px) {
-        height: 100%;
-        object-fit: cover; /* lub contain – zależy od efektu */
-      }
-    }
+    min-height: 60vh;
+    // background-image: url('images/222 1.png');
+    background: radial-gradient(50% 50% at 50% 50%, rgba(168, 168, 168, 0.225) 0%, rgba(45, 45, 45, 0.275) 100%);  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex !important;
+    align-items: end;
+    border-radius: 16px;
+    color: white;
+    padding: 20px 40px;
 
+    // .slider__content, 
     .slider__text {
-      position: absolute;
-      top: 30%;
-      left: 10%;
-      color: white;
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 20px;
-      border-radius: 5px;
+      width: 100%;
       z-index: 2;
+      // background-color: rgba(0, 0, 0, 0.4); // tło pod tekstem
+      padding: 20px 40px;
+      border-radius: 8px;
 
-      h2 {
-        font-size: 32px;
+      &:nth-child(2) {
+        display: flex;
+        justify-content: end;
+        
       }
+      &__btn {
+        font-size: 0.875rem;
+        max-width: fit-content;
+        border: 1px solid white;
+        padding: 4px 16px;
+        border-radius: 8px;
+        transition: background-color 0.4s ease;
+        &:hover {
+          background-color: black;
+        }
+      }
+      h1 {
+        font-weight: 900;
+      }
+      
+    }
+  }
 
-      a {
-        display: inline-block;
-        margin-top: 10px;
-        padding: 10px 15px;
-        background-color: #007bff;
-        color: white;
-        border-radius: 3px;
-        text-decoration: none;
+  .custom-arrow {
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    &:before {
+      content: '';
+    }
+    &:hover {
+      background-color: black;
+      & svg path {
+        stroke: #fff;
       }
     }
   }
 
-  .slick-prev,
-  .slick-next {
+  .slick-prev, .slick-next {
     z-index: 10;
   }
 }
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+// nav-tabs
+.nav-tabs {
+  border-bottom: none;
+}
+
+.nav-tabs > li > a {
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none;
+}
+
+// aktywny tab bez obramowania
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none;
+}
+
+// nav-tab breaker
+.nav-tabs > li {
+  display: inline-block;
+  position: relative; /* potrzebne dla ::after */
+  margin-right: 10px; /* odstęp od kolejnego */
+}
+
+/* Separator jako pionowa linia między li */
+.nav-tabs > li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 16px;
+  background-color: #ccc;
+}
+/*
+.nav-tabs > li:not(:last-child) > a::after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  background-color: #ccc;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+*/

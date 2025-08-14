@@ -171,97 +171,216 @@
   </div>
 </nav>
 
-
-  <!-- SLIDER -->
+  <!-- MAIN SLIDER -->
   <section class="slider container">
     <div class="slider__container">
-      <div class="slider__item">
-        <img src="<%= require('./images/222 1.png') %>" loading="lazy" />
-        <div class="slider__text">
-          <h2>Oferta specjalna</h2>
-          <a href="#">Zobacz więcej</a>
+      <div class="slider__item" style="background-image: url('<%= require('./images/222 1.png') %>')">
+        <div class="slider__text col-sm-6">
+          <h2>Nowa kolekcja</h2>
+          <p>Lorem ipsum dolor dolot lorem ipsum dolor dolot</p>
+        </div>
+        <div class="slider__text slider__text--right col-sm-6">
+          <div class="slider__text__btn bold">Zobacz więcej</div>
         </div>
       </div>
-      <div class="slider__item">
-        <img src="https://picsum.photos/id/1016/1200/500" loading="lazy" />
-        <div class="slider__text">
-          <h2>Nowości</h2>
-          <a href="#">Sprawdź</a>
+      <div class="slider__item" style="background-image: url('<%= require('./images/222 1.png') %>')">
+        <div class="slider__text col-sm-6">
+          <h2>Najgorętsze trendy tego sezonu</h2>
+          <p>Lorem ipsum dolor dolot lorem ipsum dolor dolot</p>
+        </div>
+        <div class="slider__text slider__text--right col-sm-6">
+          <div class="slider__text__btn bold">Zobacz więcej</div>
+        </div>
+      </div>
+      <div class="slider__item" style="background-image: url('https://picsum.photos/id/1016/800/1000')">
+        <div class="slider__text col-sm-6">
+          <h2>Najgorętsze trendy tego sezonu</h2>
+          <p>Lorem ipsum dolor dolot lorem ipsum dolor dolot</p>
+        </div>
+        <div class="slider__text slider__text--right col-sm-6">
+          <div class="slider__text__btn bold">Zobacz więcej</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GALERIA -->
+  <!-- GALERIA GRID -->
 <section class="gallery">
   <div class="container">
     <div class="gallery__grid">
-      <div class="div1"><img src="https://picsum.photos/id/1015/800/1000" alt="Galeria1" loading="lazy" /></div>
-      <div class="div2"><img src="https://picsum.photos/id/1016/800/400" alt="Galeria2" loading="lazy" /></div>
-      <div class="div3"><img src="https://picsum.photos/id/1016/800/400" alt="Galeria3" loading="lazy" /></div>
-      <div class="div4"><img src="https://picsum.photos/id/1015/800/1000" alt="Galeria4" loading="lazy" /></div>
-      <div class="div5"><img src="https://picsum.photos/id/1015/800/1000" alt="Galeria5" loading="lazy" /></div>
-      <div class="div6"><img src="https://picsum.photos/id/1016/800/400" alt="Galeria6" loading="lazy" /></div>
-      <div class="div7"><img src="https://picsum.photos/id/1016/800/400" alt="Galeria7" loading="lazy" /></div>
-      <div class="div8"><img src="https://picsum.photos/id/1015/800/1000" alt="Galeria8" loading="lazy" /></div>
+      <div class="div1">
+        <figure class="hover-figure">
+          <img src="https://picsum.photos/id/1016/800/1000" alt="Obrazek" class="img-responsive">
+          <figcaption class="hover-caption">
+            <h4>Botki</h4>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="div2">
+        <figure class="hover-figure">
+          <img src="<%= require('./images/Rectangle 9197.png') %>" alt="Konto" class="img-responsive">
+          <figcaption class="hover-caption">
+            <h4>Czułenka</h4>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="div3">
+        <figure class="hover-figure">
+          <img src="https://picsum.photos/id/1016/800/1000" alt="Obrazek" class="img-responsive">
+          <figcaption class="hover-caption">
+            <h4>Baleriny</h4>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="div4">
+        <figure class="hover-figure">
+          <img src="https://picsum.photos/id/1016/800/1000" alt="Obrazek" class="img-responsive">
+          <figcaption class="hover-caption">
+            <h4>Kozaki</h4>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="div5">
+        <figure class="hover-figure">
+          <img src="https://picsum.photos/id/1015/800/1000" alt="Obrazek" class="img-responsive">
+          <figcaption class="hover-caption">
+            <h4>Sandały</h4>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="div6">
+        <figure class="hover-figure">
+          <img src="https://picsum.photos/id/1015/800/1000" alt="Obrazek" class="img-responsive">
+          <figcaption class="hover-caption">
+            <h4>Mokasyny</h4>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="div7">
+        <figure class="hover-figure">
+          <img src="https://picsum.photos/id/1015/800/1000" alt="Obrazek" class="img-responsive">
+          <figcaption class="hover-caption">
+            <h4>Trampki</h4>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="div8">
+        <figure class="hover-figure">
+          <img src="https://picsum.photos/id/1015/800/1000" alt="Obrazek" class="img-responsive">
+          <figcaption class="hover-caption">
+            <h4>Wyprzedaż</h4>
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </div>
 </section>
 
-  <!-- PROMOCJE -->
-  <section class="promotions">
-    <div class="container">
-      <div class="promotions__slider">
-        <div class="promotion__item">
-          <img src="https://picsum.photos/id/101/300/300" loading="lazy" />
-          <h3>Produkt 1</h3>
-          <div class="price">99,99 zł</div>
-        </div>
-        <div class="promotion__item">
-          <img src="https://picsum.photos/id/102/300/300" loading="lazy" />
-          <h3>Produkt 2</h3>
-          <div class="price">129,99 zł</div>
-        </div>
-        <div class="promotion__item">
-          <div class="badge">Bestseller</div>
-          <img src="https://picsum.photos/id/110/300/300" loading="lazy" />
-          <h3>Produkt 4</h3>
-          <div class="price">59,99 zł</div>
-        </div>
-        <div class="promotion__item">
-          <div class="badge">-30%</div>
-          <img src="https://picsum.photos/id/103/300/300" loading="lazy" />
-          <h3>Produkt 3</h3>
-          <div class="price">89,99 zł</div>
-        </div>
+<section class="promotions">
+  <!-- PROMOCJE | NOWOSCI | BESTSELLERY -->
+  <div class="container">
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="active"><a href="#tab1" role="tab" data-toggle="tab">Promocje</a></li>
+    <li><a href="#tab2" role="tab" data-toggle="tab">Nowości</a></li>
+    <li><a href="#tab3" role="tab" data-toggle="tab">Bestsellery</a></li>
+  </ul>
+  </div>
+  <!-- zakładki -->
+  <div class="tab-content">
+    <div class="tab-pane fade in active" id="tab1">
+      <div class="container">
+        <div class="promotions__slider">
+          <div class="promotion__item">
+            <img class="img-responsive" src="https://picsum.photos/id/101/300/300" loading="lazy" />
+            <h3>Produkt 1</h3>
+            <div class="price">99,99 zł</div>
+          </div>
+          <div class="promotion__item">
+            <img class="img-responsive" src="https://picsum.photos/id/102/300/300" loading="lazy" />
+            <h3>Produkt 2</h3>
+            <div class="price">129,99 zł</div>
+          </div>
+          <div class="promotion__item">
+            <div class="badge">Bestseller</div>
+            <img class="img-responsive" src="https://picsum.photos/id/110/300/300" loading="lazy" />
+            <h3>Produkt 4</h3>
+            <div class="price">59,99 zł</div>
+          </div>
+          <div class="promotion__item">
+            <div class="badge">-30%</div>
+            <img class="img-responsive" src="https://picsum.photos/id/103/300/300" loading="lazy" />
+            <h3>Produkt 3</h3>
+            <div class="price">89,99 zł</div>
+          </div>
 
-        <div class="promotion__item">
-          <img src="https://picsum.photos/id/103/300/300" loading="lazy" />
-          <h3>Produkt 3</h3>
-          <div class="price">89,99 zł</div>
-        </div>
-        <div class="promotion__item">
-          <img src="https://picsum.photos/id/103/300/300" loading="lazy" />
-          <h3>Produkt 3</h3>
-          <div class="price">89,99 zł</div>
-        </div>
-        <div class="promotion__item">
-          <div class="badge">-30%</div>
-          <img src="https://picsum.photos/id/103/300/300" loading="lazy" />
-          <h3>Produkt 3</h3>
-          <div class="price">89,99 zł</div>
-        </div>
-        <div class="promotion__item">
-          <div class="badge">-30%</div>
-          <img src="https://picsum.photos/id/103/300/300" loading="lazy" />
-          <h3>Produkt 3</h3>
-          <div class="price">89,99 zł</div>
-        </div>
+          <div class="promotion__item">
+            <img class="img-responsive" src="https://picsum.photos/id/103/300/300" loading="lazy" />
+            <h3>Produkt 3</h3>
+            <div class="price">89,99 zł</div>
+          </div>
+          <div class="promotion__item">
+            <img class="img-responsive" src="https://picsum.photos/id/103/300/300" loading="lazy" />
+            <h3>Produkt 3</h3>
+            <div class="price">89,99 zł</div>
+          </div>
+          <div class="promotion__item">
+            <div class="badge">-30%</div>
+            <img class="img-responsive" src="https://picsum.photos/id/103/300/300" loading="lazy" />
+            <h3>Produkt 3</h3>
+            <div class="price">89,99 zł</div>
+          </div>
+          <div class="promotion__item">
+            <div class="badge">-30%</div>
+            <img class="img-responsive" src="https://picsum.photos/id/103/300/300" loading="lazy" />
+            <h3>Produkt 3</h3>
+            <div class="price">89,99 zł</div>
+          </div>
 
-        <!-- więcej produktów -->
+          <!-- więcej produktów -->
+        </div>
       </div>
     </div>
-  </section>
+    <div class="tab-pane fade" id="tab2">
+      <div class="container">
+        <div class="bestsellers__slider">
+          <div class="bestseller__item">
+            <img class="img-responsive" src="https://picsum.photos/id/101/300/300" loading="lazy" />
+            <h3>Produkt 1</h3>
+            <div class="price">99,99 zł</div>
+          </div>
+          <div class="bestseller__item">
+            <img class="img-responsive" src="https://picsum.photos/id/102/300/300" loading="lazy" />
+            <h3>Produkt 2</h3>
+            <div class="price">129,99 zł</div>
+          </div>
+          <div class="bestseller__item">
+            <div class="badge">-30%</div>
+            <img class="img-responsive" src="https://picsum.photos/id/103/300/300" loading="lazy" />
+            <h3>Produkt 3</h3>
+            <div class="price">89,99 zł</div>
+          </div>
+          <div class="bestseller__item">
+            <img class="img-responsive" src="https://picsum.photos/id/102/300/300" loading="lazy" />
+            <h3>Produkt 2</h3>
+            <div class="price">129,99 zł</div>
+          </div>
+          <div class="bestseller__item">
+            <div class="badge">-30%</div>
+            <img class="img-responsive" src="https://picsum.photos/id/103/300/300" loading="lazy" />
+            <h3>Produkt 3</h3>
+            <div class="price">89,99 zł</div>
+          </div>
+
+          <!-- więcej produktów -->
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="tab3">
+      <p>To jest zawartość zakładki 3.</p>
+    </div>
+  </div>
+</div>
+</section>
 
   <!-- NEWSLETTER -->
   <section class="newsletter">
