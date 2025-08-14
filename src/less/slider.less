@@ -13,7 +13,6 @@
     object-fit: cover; /* lub contain – zależy od efektu */
   }
 
-
   .slider__item {
     width: 100%;
     min-height: 60vh;
@@ -27,14 +26,15 @@
     align-items: end;
     border-radius: 16px;
     color: white;
-    padding: 20px 40px;
+    padding: 40px 20px;
+    text-align: left;
 
     // .slider__content, 
     .slider__text {
       width: 100%;
       z-index: 2;
       // background-color: rgba(0, 0, 0, 0.4); // tło pod tekstem
-      padding: 20px 40px;
+      padding: 0;
       border-radius: 8px;
 
       &:nth-child(2) {
@@ -90,52 +90,6 @@
   gap: 32px;
 }
 
-// nav-tabs
-.nav-tabs {
-  border-bottom: none;
+.badge {
+  position:absolute;
 }
-
-.nav-tabs > li > a {
-  border: none !important;
-  background-color: transparent !important;
-  box-shadow: none;
-}
-
-// aktywny tab bez obramowania
-.nav-tabs > li.active > a,
-.nav-tabs > li.active > a:focus,
-.nav-tabs > li.active > a:hover {
-  border: none !important;
-  background-color: transparent !important;
-  box-shadow: none;
-}
-
-// nav-tab breaker
-.nav-tabs > li {
-  display: inline-block;
-  position: relative; /* potrzebne dla ::after */
-  margin-right: 10px; /* odstęp od kolejnego */
-}
-
-/* Separator jako pionowa linia między li */
-.nav-tabs > li:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  right: -5px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1px;
-  height: 16px;
-  background-color: #ccc;
-}
-/*
-.nav-tabs > li:not(:last-child) > a::after {
-  content: '';
-  display: inline-block;
-  width: 1px;
-  height: 16px;
-  background-color: #ccc;
-  margin-left: 10px;
-  vertical-align: middle;
-}
-*/

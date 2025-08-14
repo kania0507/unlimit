@@ -59,7 +59,18 @@ html, body {
   .bold {
     font-weight: 700;
   }
+  .extrabold {
+    font-weight: 800;
+  }
   a {
       color: @f-black;
+  }
+  input:focus::placeholder {
+    color: transparent;
+  }
+  // bootstrap class
+  .form-control:focus {
+    outline: none;
+    box-shadow: none;
   }
 }

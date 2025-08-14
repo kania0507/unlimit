@@ -5,6 +5,10 @@
   background-color: #f9f9f9;
   overflow-x: hidden;
 
+  .active {
+    color: #0068FF;
+  }
+
   .container {
     position: relative;
   }
@@ -37,5 +41,53 @@
     padding: 10px;
     box-sizing: border-box;
   }
+
+
+  
+// nav-tabs
+.nav-tabs {
+  border-bottom: none;
+  display: flex;
+  row-gap: 1rem;
+  
+  li {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+}
+
+.nav-tabs > li > a {
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none;
+}
+
+// aktywny tab bez obramowania
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none;
+}
+
+// nav-tab breaker
+.nav-tabs > li {
+  display: inline-block;
+  position: relative; /* potrzebne dla ::after */
+  margin-right: 10px; /* odstęp od kolejnego */
+}
+
+/* Separator jako pionowa linia między li */
+.nav-tabs > li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 16px;
+  background-color: #ccc;
+}
 
 }

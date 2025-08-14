@@ -1,3 +1,11 @@
+.slick-slider {
+  display:flex;
+  justify-content: center;
+  &.slick-dotted {
+    margin-bottom: 3rem;
+  }
+}
+
 // Ustawienia ogólne strzałek i kropek
 .slick-arrow {
   position: absolute;
@@ -5,8 +13,8 @@
   transform: translateY(-50%);
   z-index: 99;
   border: none;
-  width: 40px;
-  height: 40px;
+  width: inherit;
+  height: inherit;
   color: #fff;
   font-size: 20px;
   line-height: 40px;
@@ -35,6 +43,52 @@
 }
 
 .slick-dots {
+  width: max-content;
+  gap: 0; // odstepy miedzy kropkami
+  li {
+    width: 4px;
+    height: 4px;
+    margin: 0 6px; // odstepy miedzy kropkami
+    button {
+      width: 4px;
+      height: 4px;
+      border: 2px solid @f-black;
+      // background-color: @f-black;
+      border-radius: 50%;
+      text-indent: -9999px; // ukrycie numeru
+      overflow: hidden;
+      padding: 0;
+      &::before {
+        width: 4px;
+        height: 4px;
+        font-size: 0;
+        line-height: 0;
+      }
+    }
+
+    &.slick-active {
+      button {
+        background-color: @bg-blue !important;
+        width: 4px;
+        height: 4px;
+        border: 0;
+        &::before {
+          content: '';
+          position: absolute;
+          top: -4px;
+          left: -4px;
+          width: 12px;  // większe niż kropka
+          height: 12px;
+          border: 1px solid @bg-blue;
+          border-radius: 50%;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+  li:not(.slick-active) button {
+    background-color: @f-black;
+  }
 }
 
 .slick-list {
@@ -43,3 +97,5 @@
 .slick-track {
   display: block !important;
 }
+
+    

@@ -58,8 +58,6 @@ if (!$clicked && !$defaultSlider.hasClass('slick-initialized')) {
     ];
   initSlider($defaultSlider, 5, $responsiveTab);
 }
- 
-
 
 /* sliders & tabs */
 // 2. Inicjalizacja pozostałych sliderów przy kliknięciu w zakładkę
@@ -88,7 +86,7 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 
 
 /* koszyk modal */
-  $('.fa-shopping-cart').on('click', function () {
+  $('.shopping-cart').on('click', function () {
     $('.cart-sidebar').addClass('open');
     // $('.cart-sidebar').toggleClass('open');
     $('.cart-overlay').fadeIn();
@@ -233,11 +231,21 @@ $(function () {
     initFooterAccordion();
   });
 
-
   $('.nav-tabs a').on('shown.bs.tab', function (e) {
     console.log('Zakładka przełączona:', e.target);
   });
 
+  // placeholder w form-control
+  const input = document.querySelector('.form-control');
+  const originalPlaceholder = input.placeholder;
+
+  input.addEventListener('focus', () => {
+    input.placeholder = '';
+  });
+
+  input.addEventListener('blur', () => {
+    input.placeholder = originalPlaceholder;
+  });
 });
 
 
