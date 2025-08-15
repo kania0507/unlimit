@@ -50,7 +50,7 @@ if (!$defaultSlider.hasClass('slick-initialized')) {
       {
         breakpoint: 768, // mobile
         settings: {
-          slidesToShow: 1.5, // 1,5 slajdu na mobile
+          slidesToShow: 1, // 1,5 slajdu na mobile
           slidesToScroll: 1,
           centerMode: false
         }

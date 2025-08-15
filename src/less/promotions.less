@@ -91,3 +91,128 @@
 }
 
 }
+// promotion item
+   .promotion__item {
+      position: relative;
+      width: 300px;
+      margin: 40px auto;
+      text-align: center;
+      font-family: sans-serif;
+    }
+
+    .img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 300px; /* ważne: wysokość */
+      overflow: hidden;
+    }
+
+    .img-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+    }
+
+    .hover-img {
+      opacity: 0;
+      z-index: 1;
+    }
+
+    .cart-icon {
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      border-radius: 50%;
+      padding: 6px;
+      width: 40px;
+      height: 40px;
+      opacity: 0;
+      transition: bottom 0.3s ease, opacity 0.3s ease;
+      z-index: 2;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .cart-icon img {
+      width: 100%;
+      height: auto;
+    }
+
+    .promotion__item:hover .hover-img {
+      opacity: 1;
+    }
+
+    .promotion__item:hover .main-img {
+      opacity: 0;
+    }
+
+    .promotion__item:hover .cart-icon {
+      bottom: 10px;
+      opacity: 1;
+    }
+
+.badges {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: bold;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+
+&--promo {
+  background-color: @bg-red; 
+}
+
+&--bestseller {
+  background-color: @bg-violet;
+}
+
+&--new {
+    background-color: @bg-green;
+  }
+}
+
+
+//
+.cart-icon {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: @bg-blue;
+  background-image: url('./../images/Bag_alt_light (2).svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: bottom 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  z-index: 2;
+}
+
+/* Efekt hover */
+.promotion__item:hover .cart-icon {
+  bottom: 10px;
+  opacity: 1;
+}
