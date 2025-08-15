@@ -114,7 +114,7 @@
       </form>
 
        <!-- Overlay wyszukiwarki -->
-      <div id="search-overlay" class="search-overlay">
+      <div id="search-overlay" class="search-overlay container">
         <div class="container">
           <h4>Ostatnio wyszukiwane:</h4>
           <ul>
@@ -384,39 +384,117 @@
 
   <!-- NEWSLETTER -->
   <section class="newsletter">
-    <div class="container newsletter__container">
-      <div class="newsletter__text">
-        <h2>Zapisz się do newslettera</h2>
-        <p>Otrzymuj najnowsze informacje i promocje.</p>
-      </div>
-      <div class="newsletter__form">
-        <form>
-          <input type="email" placeholder="Twój e-mail">
-          <input type="submit" value="Wyślij">
-        </form>
+    <div class="container">
+      <div class="newsletter__container">
+        <div class="newsletter__obj col-sm-2 hidden-xs"></div>
+        <div class="newsletter__text col-sm-5 col-xs-12">
+          <p class="newsletter__text__header">CHCESZ OTRZYMAĆ 5% ZNIŻKI NA SWOJE ZAKUPY?</p>
+          <span class="newsletter__text__text">Zapisz się do newslettera i jako pierwsza dowiedz się o nowościach, promocjach i ofertach specjalnych.</span>
+        </div>
+        <div class="newsletter__form col-sm-5 col-xs-12">
+
+          <form id="newsletter-form" class="navbar-searchform" action="/" method="GET">
+            <input class="form-control regular" type="email" id="email" placeholder="Twój e-mail" data-toggle="popover" data-placement="top" data-content="<div class='alert alert-warning' style='margin:0; padding:0 font-size: 13px;'>
+                       <span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span> 
+                       Proszę podać prawidłowy adres email
+                     </div>">
+            <button type="submit" class="search-icon-btn bg-black" aria-label="Wyślij">
+              <img src="<%= require('./images/XMLID_132_.svg') %>" alt="" class="img-responsive">
+            </button>
+          </form>
+          <span>
+          <label class="checkmark-container">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            Akceptuję regulamin i politykę prywatności.
+          </label>
+          
+        </span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- STOPKA -->
+
+
 <footer class="footer">
-  <div class="container footer__columns">
-    <div class="footer__col">
-      <h4 class="footer__toggle">O nas</h4>
-      <ul class="footer__list">
-        <li><a href="#">Kim jesteśmy</a></li>
-        <li><a href="#">Kariera</a></li>
-      </ul>
+  <div class="container">
+  <div class="footer__columns">
+    
+    
+    <!-- Pierwszy wiersz: 5 kolumn -->
+    <div class="row1" style="width: 100%;">
+      <div class="footer__col col-custom">
+        <h4 class="footer__toggle">O nas</h4>
+        <ul class="footer__list">
+          <li><a href="#">Poznajmy się</a></li>
+          <li><a href="#">Skontaktuj się z nami</a></li>
+          <li><a href="#">Dołącz się</a></li>
+        </ul>
+      </div>
+      <div class="footer__col col-custom">
+        <h4 class="footer__toggle">Informacje</h4>
+        <ul class="footer__list">
+          <li><a href="#">Poznajmy się</a></li>
+          <li><a href="#">Skontaktuj się z nami</a></li>
+          <li><a href="#">Dołącz się</a></li>
+        </ul>
+      </div>
+      <div class="footer__col col-custom">
+        <h4 class="footer__toggle">Twoje konto</h4>
+        <ul class="footer__list">
+          <li><a href="#">Poznajmy się</a></li>
+          <li><a href="#">Skontaktuj się z nami</a></li>
+          <li><a href="#">Dołącz się</a></li>
+        </ul>
+      </div>
+      <div class="footer__col col-custom">
+        <h4 class="footer__toggle">Obsługa klienta</h4>
+        <ul class="footer__list">
+          <li><a href="#">Poznajmy się</a></li>
+          <li><a href="#">Skontaktuj się z nami</a></li>
+          <li><a href="#">Dołącz się</a></li>
+        </ul>
+      </div>
+      <div class="footer__col col-custom">
+        <h4 class="footer__toggle">Skontaktuj się z nami</h4>
+        <ul class="footer__list">
+          <li><a href="#">Poznajmy się</a></li>
+          <li><a href="#">Skontaktuj się z nami</a></li>
+          <li><a href="#">Dołącz się</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer__col">
-      <h4 class="footer__toggle">Informacje</h4>
-      <ul class="footer__list">
-        <li><a href="#">Regulamin</a></li>
-        <li><a href="#">Dostawa</a></li>
-      </ul>
+
+    <hr class="breaker" />
+
+    <div class="row row-bottom">
+      <div class="col-sm-6 col-sm-12 footer-delivery">
+        <div class="footer-header">Dostawa i płatność</div>
+        <div class="footer-delivery-img">
+          <img class="img-responsive" src="<%= require('./images/4.svg') %>" alt="Facebook"/>
+          <img class="img-responsive" src="<%= require('./images/8.svg') %>" alt="Instagram"/>
+          <img class="img-responsive" src="<%= require('./images/3.svg') %>" alt="tik-tok"/>
+          <img class="img-responsive" src="<%= require('./images/4.svg') %>" alt="Facebook"/>
+          <img class="img-responsive" src="<%= require('./images/8.svg') %>" alt="Instagram"/>
+          <img class="img-responsive" src="<%= require('./images/3.svg') %>" alt="tik-tok"/>
+        </div>
+      </div>
+      <div class="col-sm-6 col-sm-12 footer-social-media">
+        <div class="footer-header">Social media</div>
+        <div class="footer-social-media-img">
+          <img class="img-responsive" src="<%= require('./images/facebook (50).svg') %>" alt="Facebook"/>
+          <img class="img-responsive" src="<%= require('./images/instagram (48).svg') %>" alt="Instagram"/>
+          <img class="img-responsive" src="<%= require('./images/tik-tok (6).svg') %>" alt="tik-tok"/>
+        </div>
+        
+      </div>
     </div>
   </div>
+  </div>
 </footer>
+
 
 <!-- PANEL KOSZYKA -->
 <div class="cart-overlay"></div>
@@ -446,5 +524,5 @@
     </div>
   </div>
 </div>
-
+<p class="text-center">&copy; AKC</p>
 </body>

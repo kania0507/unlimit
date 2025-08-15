@@ -37,8 +37,8 @@ $(document).ready(function () {
 
 /* promo slider */
 var $defaultSlider = $('.promotions__slider');
-var $clicked = false;
-if (!$clicked && !$defaultSlider.hasClass('slick-initialized')) {
+// var $clicked = false;
+if (!$defaultSlider.hasClass('slick-initialized')) {
 // var $defaultSlider = $('.tab-pane.active').find('.slider');
  var $responsiveTab = [
       {
@@ -63,7 +63,7 @@ if (!$clicked && !$defaultSlider.hasClass('slick-initialized')) {
 // 2. Inicjalizacja pozostałych sliderów przy kliknięciu w zakładkę
 $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
   var target = $(e.target).attr('href'); // np. #tab2
-  $clicked == true;
+  // $clicked == true;
   console.log(target);
   var $slider = $(target).find('.promotions__slider');
 
@@ -246,6 +246,8 @@ $(function () {
   input.addEventListener('blur', () => {
     input.placeholder = originalPlaceholder;
   });
+  // newsletter popover
+   $('#email').popover({ trigger: 'focus', html: true });
 });
 
 

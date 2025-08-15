@@ -1,6 +1,5 @@
 .navbar {
   background: #fff;
-  border-bottom: 1px solid #eee;
   padding: 10px 0;
   
 
@@ -54,59 +53,10 @@
     }
   }
 
-  .navbar__search, .navbar-searchform {
-    max-width: max-content;
-    height: auto;
-    position: relative;
-    display: flex;
-    justify-items: end;
-    align-items: center;    
-    flex: 1;
-    border-radius: 80px;
-    padding: 0;
-
-    .form-control {
-      width: inherit;
-      max-width: 225px;
-      height: 100%;
-      border-radius: 80px;
-      border: 1px solid @br-gray;
-      padding: 12px 40px 12px 12px;
-
-      &::placeholder {
-        color: @f-black;
-      }
-
-      @media (max-width: 767px) {
-        max-width: 100%;
-      }
-
-      .search-icon-btn, button {
-        position: absolute;
-        top: 50%;
-        right: 4px;
-        transform: translateY(-50%);
-        background: @bg-gray;
-        border: 0;
-        border-radius: 80px;
-        padding: 8px;
-        margin: 0;
-        cursor: pointer;
-        margin: 4px;
-
-        @media (max-width: 767px) {
-          max-width: 100%;
-        }
-      } 
-    }
-
-    
-  } 
-
   .navbar__icons {
     display: flex;
     justify-content: end;
-    gap: 10px;
+    gap: 20px;
     cursor: pointer;
 
     @media (max-width: 767px) {
@@ -136,11 +86,51 @@
 
   /* Submenu - ukryte domyślnie */
   .has-submenu {
-  position: relative;
+    position: relative;
 
   .submenu-toggle {
     cursor: pointer;
   }
+
+  
+
+.navbar__icons__div {
+  position: relative;
+  display: inline-flex;
+  &::before {
+    content: '';
+    position: absolute;
+    // top: 0;
+    // left: 0;
+    width: 44px;  // większe niż kropka
+    height: 44px;
+    border: 1px solid @br-gray;
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0; // obramowanie za obrazkiem
+  }
+  /*
+  // kropka
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 6px;
+    height: 6px;
+    background-color: red;
+    border-radius: 50%;
+    z-index: 100;
+  } */
+  img {
+    position: relative;
+    z-index: 1; // ikona nad obramowaniem
+  }
+}
 
   .megamenu-overlay {
     position: fixed;
@@ -214,13 +204,15 @@
 .search-overlay {
   position: absolute;
   top: 100%; /* lub top: 50px; jeśli navbar ma taką wysokość */
-  left: 0;
-  width: 100%;
+  // left: 0;
+  // width: 100%;
+  max-width: 1400px;
   background: white;
-  border-top: 1px solid #ccc;
+  border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   z-index: 9999;
   padding: 20px 0;
+  margin: 0 auto;
 
   display: none;
 

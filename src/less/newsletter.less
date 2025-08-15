@@ -1,0 +1,93 @@
+.newsletter {
+	padding: 15px 15px;
+	
+  .newsletter__container {
+	position: relative;
+	display: flex;
+	height: 100%;
+	min-height: inherit;
+	position: relative;
+	background-color: @bg-blue;
+	background-image: url('./../images/illustration.svg');
+	background-position: 40px -10px;
+  	background-size: auto 105%;
+	background-repeat: no-repeat;
+	color: white;
+	border-radius: 16px;
+	padding: 2.8125rem 0;
+	@media (max-width: 767px) {
+		background-image: none;
+		padding-left: 15px;
+    	padding-right: 15px;
+	}
+	.newsletter__text {
+		&__header {
+			font-weight: 800;
+			font-size: 1.5rem;
+			line-height: 100%;
+
+		}
+		&__text {
+			font-weight: 500;
+			font-size: 0.8125rem;
+			line-height: 1.125rem;
+
+		}
+	}
+
+}
+
+	// checkbox
+.checkmark-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
+
+.checkmark-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #eee;
+  border-radius: 3px;
+}
+
+.checkmark-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+ .bg-black {
+	background-color: black;
+ }
+ .search-icon-btn {
+	padding: 4px;
+ }
+}
