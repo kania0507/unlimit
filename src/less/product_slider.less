@@ -1,3 +1,4 @@
+/*
 .slider__item {
   position: relative;
   text-align: center;
@@ -33,4 +34,71 @@
 .badge {
   position:absolute;
 }
+}
+
+*/
+//
+.promotions {
+  .product-card {
+    position: relative;
+    overflow: hidden;
+    box-shadow: none;
+    background-color: none;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+      .badge-group {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 2;
+  }
+
+  .badge-custom {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+
+  .badge-bestseller {
+    background-color: @bg-red;
+    color: white;
+  }
+
+  .badge-new {
+    background-color: @bg-green;
+    color: white;
+  }
+
+    .product-info {
+      padding: 12px;
+    }
+
+    .product-title {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .product-meta {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .product-price {
+      color: @bg-blue;
+      font-weight: bold;
+      margin-top: 5px;
+      font-size: 15px;
+    }
+  }
+
 }

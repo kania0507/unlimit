@@ -56,7 +56,7 @@
           <div class="navbar__icons">
             <img src="<%= require('./images/User_light.svg') %>" alt="Konto" class="img-responsive">
             <i class="fa fa-heart" title="Ulubione"></i>
-            <i class="fa fa-shopping-cart" title="Koszyk"></i>
+            <i class="fa fa-shopping-cart shopping-cart" title="Koszyk"></i>
           </div>
         </div>
         <div class="col-xs-4 text-right">
@@ -93,11 +93,30 @@
           <a href="#" class="submenu-toggle">Produkty</a>
           <div class="megamenu-overlay">
             <div class="megamenu-content container">
-              <ul>
-                <li><a href="#">Produkt 1</a></li>
-                <li><a href="#">Produkt 2</a></li>
-                <li><a href="#">Produkt 3</a></li>
-              </ul>
+              <div class="col-sm-3 col-xs-12 megamenu-content-left">
+                <ul>
+                  <li><img src="<%= require('./images/botki_60_60px.svg') %>" alt="Konto" class="img-responsive"> <a href="#">Półbuty</a></li>
+                  <li><img src="<%= require('./images/balerinki_60_60px 1.svg') %>" alt="Konto" class="img-responsive"> <a href="#">Czułenka</a></li>
+                  <li><img src="<%= require('./images/botki_60_60px.svg') %>" alt="Konto" class="img-responsive"> <a href="#">Jazzówki</a></li>
+                  <li><img src="<%= require('./images/kozaki_60_60px.svg') %>" alt="Konto" class="img-responsive"> <a href="#">Półbuty</a></li>
+                  <li><img src="<%= require('./images/klapki_60_60px 1.svg') %>" alt="Konto" class="img-responsive"> <a href="#">Klapki</a></li>
+                  <li><img src="<%= require('./images/klapki_60_60px 1.svg') %>" alt="Konto" class="img-responsive"> <a href="#">Klapki</a></li>
+                  <li><a href="#">Pokaż wszystkie</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-9 col-xs-12 megamenu-content-right">
+                <div class="megamenu-content-right-submenu">
+                  <ul>
+                  <li><a href="#">Produkt 1</a></li>
+                  <li><a href="#">Produkt 2</a></li>
+                  <li><a href="#">Produkt 3</a></li>
+                </ul>
+                </div>
+                <div class="megamenu-content-right-img">
+                  <img src="<%= require('./images/1275x1750_product_media_18001-19000_123842-j 1.png') %>" alt="Konto" class="img-responsive">
+                </div>
+                
+              </div>
             </div>
           </div>
         </li>
@@ -115,14 +134,51 @@
 
        <!-- Overlay wyszukiwarki -->
       <div id="search-overlay" class="search-overlay container">
-        <div class="container">
-          <h4>Ostatnio wyszukiwane:</h4>
-          <ul>
-            <li>Produkt 1</li>
-            <li>Produkt 2</li>
-            <li>Produkt 3</li>
-          </ul>
+        <div class="search-bar">
+          <input type="text" placeholder="Wyszukaj" />
         </div>
+
+        <h2>Wyszukiwane produkty</h2>
+
+        <div class="products-container">
+          <div class="product-card">
+            <img src="https://picsum.photos/id/102/300/300" alt="Produkt 1">
+            <div class="product-info">
+              <h4>Półbuty mokasyny na grubej podeszwie</h4>
+              <small>Zapato | Dostępny</small>
+              <span class="price">350,10zł</span>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://picsum.photos/id/103/300/300" alt="Produkt 2">
+            <div class="product-info">
+              <h4>Półbuty skóra naturalna – model 258</h4>
+              <small>Zapato | Dostępny</small>
+              <span class="price">350,10zł</span>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://picsum.photos/id/102/300/300" alt="Produkt 3">
+            <div class="product-info">
+              <h4>Półbuty mokasyny na grubej podeszwie</h4>
+              <small>Zapato | Dostępny</small>
+              <span class="price">350,10zł</span>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="https://picsum.photos/id/103/300/300" alt="Produkt 4">
+            <div class="product-info">
+              <h4>Półbuty skóra naturalna – model 258</h4>
+              <small>Zapato | Dostępny</small>
+              <span class="price">350,10zł</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="show-all">Pokaż wszystkie</div>
       </div>
 
       <!-- Ikony -->
@@ -135,35 +191,56 @@
 
     <!--  MOBILE MENU -->
     <div class="nav navbar-nav mobile-menu visible-xs slide-in-left">
-      <div class="mobile-menu-row">
-        <div class="mobile-menu-head">Menu</div>
-        <div class="mobile-menu-close">x</div>
+
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+          <h5 class="mobile-menu-head">Menu</h5>
+          <button type="button" class="btn mobile-menu-close" data-bs-dismiss="offcanvas">
+            <img src="<%= require('./images/menu (27) 1.svg') %>" alt="Konto" class="img-responsive">
+          </button>
+        </div>
+        <div class="offcanvas-body">
+
+          <!-- Linki -->
+          <a href="#" class="menu-link">Damskie buty skórzane <i class="fa fa-chevron-right"></i></a>
+          <a href="#" class="menu-link">Bony podarunkowe</a>
+          <a href="#" class="menu-link">Nowości</a>
+          <a href="#" class="menu-link">Bestsellery</a>
+          <a href="#" class="menu-link special">% Wyprzedaż %</a>
+
+          <hr class="my-2">
+
+          <a href="#" class="menu-link fw-bold">Zaloguj / Zarejestruj</a>
+          <a href="#" class="menu-link">Schowek</a>
+          <a href="#" class="menu-link">Koszyk</a>
+
+          <!-- Dolna sekcja -->
+          <div class="bottom-section">
+            <div class="contact-info">
+              <i class="bi bi-telephone"></i> (+48) 000 000 000 <br>
+              <i class="bi bi-envelope"></i> sklep@kontakt.com.pl
+            </div>
+            <div class="social-icons mt-3">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-tiktok"></i></a>
+            </div>
+          </div>
+
+        </div>
       </div>
-      <ul>
-      <li><a href="#">Strona główna</a></li>
-      <li class="has-submenu">
-        <a href="#">Produkty</a>
-        <ul>
-          <li><a href="#">Produkt 1</a></li>
-          <li><a href="#">Produkt 2</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Sklep</a></li>
-      <li><a href="#">Kontakt</a></li>
-      </ul>
-      <div class="mobile-menu-row">tel itp</div>
+      
     </div>
 
     <!-- SEARCH FORM (mobile) -->
     <div class="navbar__search-wrapper visible-xs">
+      
       <form id="search-form" action="/search" method="GET" role="search" class="navbar-searchform">
-        <div class="input-group">
-          <input type="text" id="search-input-mobile" name="q" class="form-control" placeholder="Wyszukaj">
-          <span class="input-group-btn">
-            <button type="submit" id="search-button" class="btn btn-default" aria-label="Wyszukaj">
-              <span class="glyphicon glyphicon-search"></span>
-            </button>
-          </span>
+        <div class="search-box input-group">
+          <input id="search-input-mobile" class="form-control" type="text" placeholder="Wyszukaj"  name="q" />
+          <button type="submit" aria-label="Szukaj">
+             <span class="glyphicon glyphicon-search"></span>
+          </button>
         </div>
       </form>
     </div>
@@ -204,69 +281,69 @@
     </div>
   </section>
 
-  <!-- GALERIA GRID -->
+<!-- GALERIA GRID -->
 <section class="gallery">
   <div class="container">
-    <div class="gallery__grid">
-      <div class="div1">
+    <div class="masonry">
+      <div class="masonry-item">
         <figure class="hover-figure">
-          <img src="<%= require('./images/Rectangle 9197.png') %>" alt="Obrazek" class="img-responsive">
+          <img src="<%= require('./images/Rectangle 9197.png') %>" alt="Botki" class="img-responsive">
           <figcaption class="hover-caption">
             <h4>Botki</h4>
           </figcaption>
         </figure>
       </div>
-      <div class="div2">
+      <div class="masonry-item">
         <figure class="hover-figure">
-          <img src="<%= require('./images/Rectangle 9198.png') %>" alt="Konto" class="img-responsive">
+          <img src="<%= require('./images/Rectangle 9198.png') %>" alt="Czułenka" class="img-responsive">
           <figcaption class="hover-caption">
             <h4>Czułenka</h4>
           </figcaption>
         </figure>
       </div>
-      <div class="div3">
+      <div class="masonry-item">
         <figure class="hover-figure">
-          <img src="<%= require('./images/Rectangle 9198.png') %>" alt="Obrazek" class="img-responsive">
+          <img src="<%= require('./images/Rectangle 9198.png') %>" alt="Baleriny" class="img-responsive">
           <figcaption class="hover-caption">
             <h4>Baleriny</h4>
           </figcaption>
         </figure>
       </div>
-      <div class="div4">
+      <div class="masonry-item">
         <figure class="hover-figure">
-          <img src="<%= require('./images/Rectangle 9197.png') %>" alt="Obrazek" class="img-responsive">
+          <img src="<%= require('./images/Rectangle 9197.png') %>" alt="Kozaki" class="img-responsive">
           <figcaption class="hover-caption">
             <h4>Kozaki</h4>
           </figcaption>
         </figure>
       </div>
-      <div class="div5">
+      <div class="masonry-item">
         <figure class="hover-figure">
-          <img src="<%= require('./images/Rectangle 9197.png') %>" alt="Obrazek" class="img-responsive">
+          <img src="<%= require('./images/Rectangle 9197.png') %>" alt="Sandały" class="img-responsive">
           <figcaption class="hover-caption">
             <h4>Sandały</h4>
           </figcaption>
         </figure>
       </div>
-      <div class="div6">
+      <div class="masonry-item">
         <figure class="hover-figure">
-          <img src="<%= require('./images/Rectangle 9198.png') %>" alt="Obrazek" class="img-responsive">
+          <img src="<%= require('./images/Rectangle 9198.png') %>" alt="Mokasyny" class="img-responsive">
           <figcaption class="hover-caption">
             <h4>Mokasyny</h4>
           </figcaption>
         </figure>
       </div>
-      <div class="div7">
+      <div class="masonry-item">
         <figure class="hover-figure">
-          <img src="<%= require('./images/Rectangle 9198.png') %>" alt="Obrazek" class="img-responsive">
+          <img src="<%= require('./images/Rectangle 9198.png') %>" alt="Trampki" class="img-responsive">
           <figcaption class="hover-caption">
             <h4>Trampki</h4>
           </figcaption>
         </figure>
       </div>
-      <div class="div8">
+      <div class="masonry-item">
         <figure class="hover-figure">
-          <img src="<%= require('./images/Rectangle 9197.png') %>" alt="Obrazek" class="img-responsive">
+          <img src="<%= require('./images/Rectangle 9197.png') %>" alt="Wyprzedaż" class="img-responsive">
           <figcaption class="hover-caption">
             <h4>Wyprzedaż</h4>
           </figcaption>
@@ -274,14 +351,16 @@
       </div>
     </div>
   </div>
-</section>
+
+  </section>
+  
 
 <section class="promotions">
   <!-- PROMOCJE | NOWOSCI | BESTSELLERY -->
   <div class="container">
   <ul class="nav nav-tabs" role="tablist">
-    <li class="active"><a href="#tab1" role="tab" data-toggle="tab">Promocje</a></li>
-    <li><a href="#tab2" role="tab" data-toggle="tab">Nowości</a></li>
+    <li class="active"><a href="#tab1"  role="tab" data-toggle="tab">Promocje</a></li>
+    <li><a href="#tab2"  role="tab" data-toggle="tab">Nowości</a></li>
     <li><a href="#tab3" role="tab" data-toggle="tab">Bestsellery</a></li>
   </ul>
   </div>
@@ -289,124 +368,151 @@
   <div class="tab-content">
     <div class="tab-pane fade in active" id="tab1">
       <div class="container">
-        <div class="promotions__slider">
+        <div class="promotions__slider" >
 
-          <div class="promotion__item">
-            <div class="img-wrapper">
-              <!-- Badges -->
-              <div class="badges">
-                <span class="badge badge--promo">PROMOCJA</span>
-                <span class="badge badge--new">NEW</span>
+          <div class="container promotion__item">
+
+            <div class="row justify-content-center">
+              <div class="col-md-3">
+                <div class="product-card">
+                  <div class="badge-group">
+                    <span class="badge-custom badge-bestseller">BESTSELLER</span>
+                  </div>
+                  <div class="img-wrapper">
+                    <img class="main-img img-responsive" src="https://picsum.photos/id/101/300/300" />
+                    <img class="hover-img img-responsive" src="https://picsum.photos/id/102/300/300" />
+                  </div>
+                  <div class="cart-icon"></div>
+                  <div class="product-info">
+                    <div class="product-title">Półbuty mokasyny na grubej podeszwie</div>
+                    <div class="product-meta">Zapato | Dostępny</div>
+                    <div class="product-price">350,10zł</div>
+                  </div>
+                </div>
               </div>
-
-              <!-- Images -->
-              <img class="main-img img-responsive" src="https://picsum.photos/id/101/300/300" />
-              <img class="hover-img img-responsive" src="https://picsum.photos/id/102/300/300" />
-              <div class="cart-icon"></div>
             </div>
-
-            <h3>Produkt 1</h3>
-            <div class="price">99,99 zł</div>
           </div>
-          <div class="promotion__item">
-            <div class="img-wrapper">
-              <!-- Badges -->
-              <div class="badges">
-                <span class="badge badge--promo">PROMOCJA</span>
+
+          <div class="container promotion__item">
+            <div class="row justify-content-center">
+              <div class="col-md-3">
+                <div class="product-card">
+                  <div class="badge-group">
+                    <span class="badge-custom badge-new">NOWOŚĆ</span>
+                  </div>
+                  <div class="img-wrapper">
+                    <img class="main-img img-responsive" src="https://picsum.photos/id/101/300/300" />
+                    <img class="hover-img img-responsive" src="https://picsum.photos/id/102/300/300" />
+                    </div>
+                  <div class="cart-icon"></div>
+                  <div class="product-info">
+                    <div class="product-title">Półbuty mokasyny na grubej podeszwie</div>
+                    <div class="product-meta">Zapato | Dostępny</div>
+                    <div class="product-price">350,10zł</div>
+                  </div>
+                </div>
               </div>
-
-              <!-- Images -->
-              <img class="main-img img-responsive" src="https://picsum.photos/id/101/300/300" />
-              <img class="hover-img img-responsive" src="https://picsum.photos/id/102/300/300" />
-              <div class="cart-icon"></div>
             </div>
-
-            <h3>Produkt 1</h3>
-            <div class="price">99,99 zł</div>
           </div>
-          <div class="promotion__item">
-            <div class="img-wrapper">
 
-              <!-- Images -->
-              <img class="main-img img-responsive" src="https://picsum.photos/id/101/300/300" />
-              <img class="hover-img img-responsive" src="https://picsum.photos/id/102/300/300" />
-              <div class="cart-icon"></div>
-            </div>
+          <div class="container promotion__item">
+            <div class="row justify-content-center">
+              <div class="col-md-3">
+                <div class="product-card">
+                  <div class="badge-group">
+                  </div>
+                  
+                  <div class="img-wrapper">
+                    <img class="main-img img-responsive" src="https://picsum.photos/id/101/300/300" />
+                    <img class="hover-img img-responsive" src="https://picsum.photos/id/102/300/300" />
+                  </div>
+                  <div class="cart-icon"></div>
 
-            <h3>Produkt 1</h3>
-            <div class="price">99,99 zł</div>
-          </div>
-          <div class="promotion__item">
-            <div class="img-wrapper">
-              <!-- Badges -->
-              <div class="badges">
-                <span class="badge badge--new">NEW</span>
+                  <!-- Product info -->
+                  <div class="product-info">
+                    <div class="product-title">Półbuty mokasyny na grubej podeszwie</div>
+                    <div class="product-meta">Zapato | Dostępny</div>
+                    <div class="product-price">350,10zł</div>
+                  </div>
+                </div>
               </div>
-
-              <!-- Images -->
-              <img class="main-img img-responsive" src="https://picsum.photos/id/101/300/300" />
-              <img class="hover-img img-responsive" src="https://picsum.photos/id/102/300/300" />
-              <div class="cart-icon"></div>
             </div>
-
-            <h3>Produkt 1</h3>
-            <div class="price">99,99 zł</div>
           </div>
-          <div class="promotion__item">
-            <div class="img-wrapper">
-              <!-- Badges -->
-              <div class="badges">
-                <span class="badge badge--promo">PROMOCJA</span>
-                <span class="badge badge--bestseller">BESTSELLER</span>
-                <span class="badge badge--new">NEW</span>
+
+          <div class="container promotion__item">
+            <div class="row justify-content-center">
+              <div class="col-md-3">
+                <div class="product-card">
+                  <div class="badge-group">
+                    <span class="badge-custom badge-bestseller">BESTSELLER</span>
+                    <span class="badge-custom badge-new">NOWOŚĆ</span>
+                  </div>
+
+                
+                  <div class="img-wrapper">
+                    <img class="main-img img-responsive" src="https://picsum.photos/id/101/300/300" />
+                    <img class="hover-img img-responsive" src="https://picsum.photos/id/102/300/300" />
+                  </div>
+                  <div class="cart-icon"></div>
+
+                  <!-- Product info -->
+                  <div class="product-info">
+                    <div class="product-title">Półbuty mokasyny na grubej podeszwie</div>
+                    <div class="product-meta">Zapato | Dostępny</div>
+                    <div class="product-price">350,10zł</div>
+                  </div>
+                </div>
               </div>
-
-              <!-- Images -->
-              <img class="main-img img-responsive" src="https://picsum.photos/id/101/300/300" />
-              <img class="hover-img img-responsive" src="https://picsum.photos/id/102/300/300" />
-              <div class="cart-icon"></div>
             </div>
-
-            <h3>Produkt 1</h3>
-            <div class="price">99,99 zł</div>
           </div>
-          <div class="promotion__item">
-            <div class="img-wrapper">
-              <!-- Badges -->
-              <div class="badges">
-                <span class="badge badge--promo">PROMOCJA</span>
-                <span class="badge badge--bestseller">BESTSELLER</span>
-                <span class="badge badge--new">NEW</span>
+
+          <div class="container promotion__item">
+            <div class="row justify-content-center">
+              <div class="col-md-3">
+                <div class="product-card">
+                  <div class="badge-group">
+                    <span class="badge-custom badge-new">NOWOŚĆ</span>
+                  </div>
+
+                  <div class="img-wrapper">
+                    <img class="main-img img-responsive" src="https://picsum.photos/id/101/300/300" />
+                    <img class="hover-img img-responsive" src="https://picsum.photos/id/102/300/300" />
+                  </div>
+                  <div class="cart-icon"></div>
+                  <div class="product-info">
+                    <div class="product-title">Półbuty mokasyny na grubej podeszwie</div>
+                    <div class="product-meta">Zapato | Dostępny</div>
+                    <div class="product-price">350,10zł</div>
+                  </div>
+                </div>
               </div>
-
-              <!-- Images -->
-              <img class="main-img img-responsive" src="https://picsum.photos/id/101/300/300" />
-              <img class="hover-img img-responsive" src="https://picsum.photos/id/102/300/300" />
-              <div class="cart-icon"></div>
             </div>
-
-            <h3>Produkt 1</h3>
-            <div class="price">99,99 zł</div>
           </div>
-          <div class="promotion__item">
-            <div class="img-wrapper">
-              <!-- Badges -->
-              <div class="badges">
-                <span class="badge badge--promo">PROMOCJA</span>
-                <span class="badge badge--bestseller">BESTSELLER</span>
-                <span class="badge badge--new">NEW</span>
+
+          <div class="container promotion__item">
+            <div class="row justify-content-center">
+              <div class="col-md-3">
+                <div class="product-card">
+                  <div class="badge-group">
+                    <span class="badge-custom badge-bestseller">BESTSELLER</span>
+                    <span class="badge-custom badge-new">NOWOŚĆ</span>
+                  </div>
+
+                  
+                  <div class="img-wrapper">
+                    <img class="main-img img-responsive" src="https://picsum.photos/id/101/300/300" />
+                    <img class="hover-img img-responsive" src="https://picsum.photos/id/102/300/300" />
+                  </div>
+                  <div class="cart-icon"></div>
+                  <div class="product-info">
+                    <div class="product-title">Półbuty mokasyny na grubej podeszwie</div>
+                    <div class="product-meta">Zapato | Dostępny</div>
+                    <div class="product-price">350,10zł</div>
+                  </div>
+                </div>
               </div>
-
-              <!-- Images -->
-              <img class="main-img img-responsive" src="https://picsum.photos/id/101/300/300" />
-              <img class="hover-img img-responsive" src="https://picsum.photos/id/102/300/300" />
-              <div class="cart-icon"></div>
             </div>
-
-            <h3>Produkt 1</h3>
-            <div class="price">99,99 zł</div>
           </div>
-
           <!-- więcej produktów -->
         </div>
       </div>
@@ -415,39 +521,71 @@
       <div class="container">
         <div class="bestsellers__slider">
 
-          <div class="bestseller__item">
-            <div class="img-wrapper">
-              <img class="main-img img-responsive" src="https://picsum.photos/id/101/300/300" loading="lazy" />
-              <img class="hover-img img-responsive" src="https://picsum.photos/id/102/300/300" loading="lazy" />
-              <div class="cart-icon">
-                <img src="https://cdn-icons-png.flaticon.com/512/34/34568.png" alt="Koszyk" />
+          <div class="container promotion__item">
+
+            <div class="row justify-content-center">
+              <div class="col-md-3">
+                <div class="product-card">
+                  <div class="badge-group">
+                    <span class="badge-custom badge-bestseller">BESTSELLER</span>
+                  </div>
+                  <div class="img-wrapper">
+                    <img class="main-img img-responsive" src="https://picsum.photos/id/101/300/300" />
+                    <img class="hover-img img-responsive" src="https://picsum.photos/id/102/300/300" />
+                  </div>
+                  <div class="cart-icon"></div>
+                  <div class="product-info">
+                    <div class="product-title">Półbuty mokasyny na grubej podeszwie</div>
+                    <div class="product-meta">Zapato | Dostępny</div>
+                    <div class="product-price">350,10zł</div>
+                  </div>
+                </div>
               </div>
             </div>
-            <h3>Produkt 1</h3>
-            <div class="price">99,99 zł</div>
           </div>
+          <div class="container promotion__item">
 
-          <div class="bestseller__item">
-            <img class="img-responsive" src="https://picsum.photos/id/102/300/300" loading="lazy" />
-            <h3>Produkt 2</h3>
-            <div class="price">129,99 zł</div>
+            <div class="row justify-content-center">
+              <div class="col-md-3">
+                <div class="product-card">
+                  <div class="badge-group">
+                    <span class="badge-custom badge-bestseller">BESTSELLER</span>
+                  </div>
+                  <div class="img-wrapper">
+                    <img class="main-img img-responsive" src="https://picsum.photos/id/101/300/300" />
+                    <img class="hover-img img-responsive" src="https://picsum.photos/id/102/300/300" />
+                  </div>
+                  <div class="cart-icon"></div>
+                  <div class="product-info">
+                    <div class="product-title">Półbuty mokasyny na grubej podeszwie</div>
+                    <div class="product-meta">Zapato | Dostępny</div>
+                    <div class="product-price">350,10zł</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="bestseller__item">
-            <div class="badge">-30%</div>
-            <img class="img-responsive" src="https://picsum.photos/id/103/300/300" loading="lazy" />
-            <h3>Produkt 3</h3>
-            <div class="price">89,99 zł</div>
-          </div>
-          <div class="bestseller__item">
-            <img class="img-responsive" src="https://picsum.photos/id/102/300/300" loading="lazy" />
-            <h3>Produkt 2</h3>
-            <div class="price">129,99 zł</div>
-          </div>
-          <div class="bestseller__item">
-            <div class="badge">-30%</div>
-            <img class="img-responsive" src="https://picsum.photos/id/103/300/300" loading="lazy" />
-            <h3>Produkt 3</h3>
-            <div class="price">89,99 zł</div>
+          <div class="container promotion__item">
+
+            <div class="row justify-content-center">
+              <div class="col-md-3">
+                <div class="product-card">
+                  <div class="badge-group">
+                    <span class="badge-custom badge-bestseller">BESTSELLER</span>
+                  </div>
+                  <div class="img-wrapper">
+                    <img class="main-img img-responsive" src="https://picsum.photos/id/101/300/300" />
+                    <img class="hover-img img-responsive" src="https://picsum.photos/id/102/300/300" />
+                  </div>
+                  <div class="cart-icon"></div>
+                  <div class="product-info">
+                    <div class="product-title">Półbuty mokasyny na grubej podeszwie</div>
+                    <div class="product-meta">Zapato | Dostępny</div>
+                    <div class="product-price">350,10zł</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- więcej produktów -->
@@ -455,7 +593,7 @@
       </div>
     </div>
     <div class="tab-pane fade" id="tab3">
-      <div class="container"><p>To jest zawartość zakładki 3.</p></div>
+      <div class="container"><div class="row"><div class="col-xs-12">To jest zawartość zakładki 3.</div></div></div>
     </div>
   </div>
 </div>
@@ -577,7 +715,54 @@
 
 <!-- PANEL KOSZYKA -->
 <div class="cart-overlay"></div>
-<div class="cart-sidebar">
+<div class="cart-container cart-sidebar">
+
+  <div class="cart-header">
+    Koszyk <span>(2 sztuki)</span>
+    <div class="delete-btn close-cart">
+      <img src="<%= require('./images/circle-xmark 1.svg') %>" alt="">
+    </div>
+  </div>
+
+  <div class="cart-item">
+    <img src="https://picsum.photos/id/1011/80" alt="Produkt 1">
+    <div class="item-info">
+      <h4>Półbuty mokasyny na grubej podeszwie</h4>
+      <div class="price">1 szt. x 129,99 zł</div>
+    </div>
+    <div class="delete-btn">
+      <img src="<%= require('./images/trash (1).svg') %>" alt="">
+    </div>
+  </div>
+
+  <div class="cart-item">
+    <img src="https://picsum.photos/id/1012/80" alt="Produkt 2">
+    <div class="item-info">
+      <h4>Półbuty skóra naturalna model 258</h4>
+      <div class="price">1 szt. x 129,99 zł</div>
+    </div>
+    <div class="delete-btn">
+      <img src="<%= require('./images/trash (1).svg') %>" alt="">
+    </div>
+  </div>
+
+  <div class="cart-summary">
+    <div class="free-shipping">
+      <img src="<%= require('./images/box-open.svg') %>" alt=""> Do darmowej dostawy brakuje: <strong style="margin-left: 4px; color: #007bff;">39,99 zł</strong>
+    </div>
+    <div class="progress-bar-container">
+      <div class="progress-bar-fill"></div>
+    </div>
+    <div class="total">
+      <span>Razem do zapłaty:</span>
+      <span>129,99 zł</span>
+    </div>
+    <a href="#" class="checkout-btn">Przejdź do koszyka</a>
+  </div>
+
+</div>
+
+<!--<div class="cart-sidebar">
   <div class="cart-header">
     <h3>Twój koszyk</h3>
     <button class="close-cart">&times;</button>
@@ -602,6 +787,6 @@
       <button class="btn btn-primary btn-block">Do kasy</button>
     </div>
   </div>
-</div>
+</div>-->
 <p class="text-center">&copy; AKC</p>
 </body>
