@@ -99,3 +99,45 @@
 }
 
     
+// custom arrow
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px); // dla Safari
+  background-color: rgba(255, 255, 255, 0.2); // lekki biały przezroczysty
+  &::before {
+    display: none;
+  }
+}
+
+.custom-prev {
+  left: 10px;
+}
+
+.custom-next {
+  right: 10px;
+}
+
+.custom-arrow svg path {
+  fill: white; /* lub white, zależnie od tła */
+}
+
+.custom-arrow:hover {
+  background-color: black !important;
+}
+
+.custom-arrow:hover svg path {
+  fill: white;
+}

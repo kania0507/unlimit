@@ -1,12 +1,10 @@
-@import 'product.less';
-
 .promotions {
   padding: 50px 0;
   background-color: #f9f9f9;
   overflow-x: hidden;
 
   .active {
-    color: #0068FF;
+    color: @f-blue;
   }
 
   .container {
@@ -14,13 +12,13 @@
   }
 
   .promotions__slider, .bestsellers_slider {
+    overflow: hidden;
     .slick-slide {
       // margin: 0 10px;
     }
 
     .slick-prev,
     .slick-next {
-      background: #fff;
       border: 1px solid #ccc;
       width: 40px;
       height: 40px;
@@ -32,7 +30,11 @@
       color: #333;
       font-size: 20px;
     }
+    .slick-list {
+      margin: 0 -10px; 
+    }
   }
+
 
   
 // nav-tabs
@@ -40,18 +42,45 @@
   border-bottom: none;
   display: flex;
   row-gap: 1rem;
-  
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
   li {
     font-size: 2rem;
     font-weight: 800;
+    // nav-tab breaker
+    display: inline-block;
+    position: relative; /* potrzebne dla ::after */
+    margin-right: 10px; /* odstęp od kolejnego */
+    // Separator jako pionowa linia między li 
+    &:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: -5px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 16px;
+      background-color: #ccc;
+    }
+    a {
+      border: none !important;
+      background-color: transparent !important;
+      box-shadow: none;
+    }
+    .active {
+      color: @f-blue;
+      font-weight: bold;
+    
+    }
   }
 }
 
-.nav-tabs > li > a {
-  border: none !important;
-  background-color: transparent !important;
-  box-shadow: none;
-}
 
 // aktywny tab bez obramowania
 .nav-tabs > li.active > a,
@@ -62,31 +91,21 @@
   box-shadow: none;
 }
 
-// nav-tab breaker
-.nav-tabs > li {
-  display: inline-block;
-  position: relative; /* potrzebne dla ::after */
-  margin-right: 10px; /* odstęp od kolejnego */
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  color: inherit;
 }
 
-/* Separator jako pionowa linia między li */
-.nav-tabs > li:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  right: -5px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1px;
-  height: 16px;
-  background-color: #ccc;
-}
 
 }
 // promotion item
    .promotion__item {
       position: relative;
       margin: 40px auto;
-      font-family: sans-serif;
+      padding: 0 10px;
+      box-sizing: border-box;
+      .product-card {
+        width: auto;
+      }
     }
 
     .img-wrapper {
@@ -183,3 +202,4 @@
     bottom: 100px;
   }
 }
+

@@ -46,7 +46,7 @@ $(document).ready(function () {
       {
         breakpoint: 768, // mobile
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1.5,
           slidesToScroll: 1,
           centerMode: false
         }
@@ -252,7 +252,25 @@ function initSlider($slider, $slidesToShow = 1, $responsiveTab = [], $slidesToSc
       dots: $dots,
       arrows: $arrows,
       responsive: $responsiveTab,
-      centerMode: false
+      centerMode: false,
+      prevArrow: `
+    <button type="button" class="slick-prev custom-arrow" aria-label="Poprzedni">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="35.5" y="35.5" width="35" height="35" rx="17.5" transform="rotate(-180 35.5 35.5)" stroke="white"/>
+      <path d="M16.7005 24L17.4354 23.2651L12.01 17.8396L17.4354 12.4141L16.7005 11.6792L10.5401 17.8396L16.7005 24Z" fill="white"/>
+      <path d="M26 17.3192L11.2663 17.3192L11.2663 18.3592L26 18.3592L26 17.3192Z" fill="white"/>
+      </svg>
+    </button>
+  `,
+  nextArrow: `
+  <button type="button" class="slick-next custom-arrow" aria-label="Następny">
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0.5" y="0.5" width="35" height="35" rx="17.5" stroke="white"/>
+    <path d="M19.2995 12L18.5646 12.7349L23.99 18.1604L18.5646 23.5859L19.2995 24.3208L25.4599 18.1604L19.2995 12Z" fill="white"/>
+    <path d="M10 18.6808L24.7337 18.6808L24.7337 17.6408L10 17.6408L10 18.6808Z" fill="white"/>
+    </svg>
+  </button>
+  `
     });
   } else {
     $slider.slick('setPosition'); // przeliczenie pozycji, jeśli już był zainicjowany
